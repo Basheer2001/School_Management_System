@@ -17,8 +17,9 @@ class _StudentsAdminiStraionState extends State<StudentsAdminiStraion> {
         child: Scaffold(
           body: Column(
             children: [
-              body(context),
               appBar(context),
+              body(context),
+
             ],
           ),
         ),
@@ -69,185 +70,183 @@ Widget appBar(BuildContext context) {
 }
 
 Widget body(BuildContext context) {
-  return Center(
-    child: Expanded(
-      child: GridView.count(
-        shrinkWrap: true,
-        //itemCount: categoryList.length,
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 8,
-        ),
-        childAspectRatio: 0.9,
-        crossAxisCount: 2,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 24,
-        children: [
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 4.0,
-                      spreadRadius: 0.05),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      'images/students.avif',
-                      height: 120,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Text(
-                    'Students Administration',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                ],
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 4.0,
-                      spreadRadius: 0.05),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      'images/school2.avif',
-                      height: 120,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Text(
-                    'School Administraion',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                ],
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 4.0,
-                      spreadRadius: 0.05),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      'images/adding.png',
-                      height: 120,
-                    ),
-                  ),
-                  Text(
-                    'Adding Section',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                ],
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 4.0,
-                      spreadRadius: 0.05),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      'images/adding.png',
-                      height: 120,
-                    ),
-                  ),
-                  Text(
-                    'Adding Section',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                ],
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      blurRadius: 4.0,
-                      spreadRadius: 0.05),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      'images/adding.png',
-                      height: 120,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                  Text(
-                    'Adding Section',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                ],
-              ),
-            ),
-          ),
-        ],
+  return Expanded(
+    child: GridView.count(
+      shrinkWrap: true,
+      //itemCount: categoryList.length,
+      padding: EdgeInsets.symmetric(
+        horizontal: 20,
+        vertical: 8,
       ),
+      childAspectRatio: 0.9,
+      crossAxisCount: 2,
+      crossAxisSpacing: 20,
+      mainAxisSpacing: 24,
+      children: [
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/adding.png',
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Text(
+                  'Students Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/adding.png',
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Text(
+                  'Teachers Administraion',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/adding.png',
+                    height: 120,
+                  ),
+                ),
+                Text(
+                  'Admins Adminstration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/adding.png',
+                    height: 120,
+                  ),
+                ),
+                Text(
+                  'Parents adminstration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        // GestureDetector(
+        //   onTap: () {},
+        //   child: Container(
+        //     padding: EdgeInsets.all(10),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(20),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: Colors.black.withOpacity(0.1),
+        //             blurRadius: 4.0,
+        //             spreadRadius: 0.05),
+        //       ],
+        //     ),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Align(
+        //           alignment: Alignment.center,
+        //           child: Image.asset(
+        //             'images/adding.png',
+        //             height: 120,
+        //             fit: BoxFit.contain,
+        //           ),
+        //         ),
+        //         Text(
+        //           'Adding Section',
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // ),
+      ],
     ),
   );
 }
