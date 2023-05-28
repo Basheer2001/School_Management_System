@@ -2,11 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/constants/category.dart';
-import 'package:project_one/constants/size.dart';
 import 'package:project_one/ui/admin_screens/school_administraion.dart';
 import 'package:project_one/ui/admin_screens/students_administraion.dart';
-import 'package:project_one/ui/category_card.dart';
 
 class FeaturedScreen extends StatefulWidget {
   const FeaturedScreen({super.key});
