@@ -111,7 +111,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/students.avif',
+                    'images/adding.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -150,7 +150,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/school2.avif',
+                    'images/adding.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -253,7 +253,7 @@ Widget body(BuildContext context) {
                   ),
                 ),
                 Text(
-                  'Adding Section',
+                  'Section',
                   style: Theme.of(context).textTheme.bodyLarge,
                 )
               ],
