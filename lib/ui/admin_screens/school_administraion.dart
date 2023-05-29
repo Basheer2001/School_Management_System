@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 import 'package:project_one/ui/admin_screens/view_classes.dart';
 
 class SchoolAdministraion extends StatefulWidget {
@@ -67,7 +68,7 @@ Widget appBar(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'School Administiration',
+              'Class Administiration',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
@@ -96,7 +97,7 @@ Widget body(BuildContext context) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ViewClasses(),
+                builder: (context) => SelectYearForStudentsAdministration(),
               ),
             );
           },

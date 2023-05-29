@@ -89,7 +89,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                       FirstCustomTextFormField(
                         name: 'name',
                         hintText: 'enter name',
-                        validationError: 'less than 4 charachters',
+                        validationError: 'less than 4 characters',
                         icon: Icons.person,
                         purpose: 'register',
                         studentModel: studentModel,
@@ -97,7 +97,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                       FirstCustomTextFormField(
                         name: 'second name',
                         hintText: 'enter second name',
-                        validationError: 'less than 4 charachters',
+                        validationError: 'less than 4 characters',
                         icon: Icons.person,
                         purpose: 'register',
                         studentModel: studentModel,
@@ -114,7 +114,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                       FirstCustomTextFormField(
                         name: 'address',
                         hintText: 'enter address',
-                        validationError: 'less than 4 charachters',
+                        validationError: 'less than 4 characters',
                         icon: Icons.location_on,
                         purpose: 'register',
                         studentModel: studentModel,
@@ -122,7 +122,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                       FirstCustomTextFormField(
                         name: 'phone number',
                         hintText: 'enter phone number',
-                        validationError: 'less than 4 charachters',
+                        validationError: 'less than 4 characters',
                         icon: Icons.phone,
                         purpose: 'register',
                         studentModel: studentModel,
@@ -152,7 +152,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                                       .pushReplacementNamed('/home');
                                 } else {
                                   final snackBar =
-                                      SnackBar(content: Text('faild to login'));
+                                      SnackBar(content: Text(' failed to login'));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                 }
@@ -166,7 +166,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                               ),
                               backgroundColor: Colors.white),
                           child: Text(
-                            'Log in',
+                            'Create Account',
                             style: TextStyle(
                                 color: Color(0xff5ac18e),
                                 fontSize: 18,

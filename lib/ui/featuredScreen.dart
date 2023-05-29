@@ -2,8 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/ui/admin_screens/school_administraion.dart';
-import 'package:project_one/ui/admin_screens/students_administraion.dart';
+import 'package:project_one/constants/category.dart';
+import 'package:project_one/constants/size.dart';
+
+import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
+import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
+
+import 'package:project_one/ui/category_card.dart';
 
 class FeaturedScreen extends StatefulWidget {
   const FeaturedScreen({super.key});
@@ -84,7 +89,8 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => StudentsAdminiStraion()),
+              MaterialPageRoute(
+                  builder: (context) => SelectYearForStudentsAdministration()),
             );
           },
           child: Container(
@@ -122,7 +128,8 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SchoolAdministraion()),
+              MaterialPageRoute(
+                  builder: (context) => SelectYearForSchoolAdministration()),
             );
           },
           child: Container(
@@ -149,7 +156,7 @@ Widget body(BuildContext context) {
                   ),
                 ),
                 Text(
-                  'School Administraion',
+                  'Class Administraion',
                   style: Theme.of(context).textTheme.bodyLarge,
                 )
               ],
@@ -181,7 +188,7 @@ Widget body(BuildContext context) {
                   ),
                 ),
                 Text(
-                  'Adding Section',
+                  'Teachers Administration',
                   style: Theme.of(context).textTheme.bodyLarge,
                 )
               ],
