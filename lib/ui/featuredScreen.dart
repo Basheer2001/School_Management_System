@@ -38,7 +38,7 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
 Widget appBar(BuildContext context) {
   return Container(
     padding: EdgeInsets.only(top: 50, left: 20, right: 20),
-    height: 180,
+    height: 150,
     width: double.infinity,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.only(
