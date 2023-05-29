@@ -67,7 +67,7 @@ Widget appBar(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'School Administiration',
+              'Class Administiration',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
