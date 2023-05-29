@@ -111,7 +111,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/adding.png',
+                    'images/students.jpg',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -150,41 +150,9 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/adding.png',
+                    'images/teachers.png',
                     height: 120,
                     fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Class Administraion',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                )
-              ],
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/adding.png',
-                    height: 120,
                   ),
                 ),
                 Text(
@@ -195,6 +163,7 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
+
         GestureDetector(
           onTap: () {},
           child: Container(
@@ -215,12 +184,12 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/adding.png',
+                    'images/parent.png',
                     height: 120,
                   ),
                 ),
                 Text(
-                  'Adding Section',
+                  'Parents Administration',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
 
@@ -248,13 +217,13 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/adding.png',
+                    'images/admin.jpg',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
                 ),
                 Text(
-                  'Section',
+                  'Admins Administration',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
 
