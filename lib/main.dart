@@ -1,9 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-//import 'package:apitesting/auth/testing.dart';
-//import 'package:apitesting/newfetch.dart';
-//import 'package:apitesting/post_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/providers/student_provider.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
 import 'package:provider/provider.dart';
@@ -23,9 +21,12 @@ main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<SecondPostProvider>(
-          create: (_) => SecondPostProvider(),
-        )
+        ChangeNotifierProvider<StudentProvider>(
+          create: (_) => StudentProvider(),
+        ),
+        ChangeNotifierProvider<AdminProivder>(
+          create: (_) => AdminProivder(),
+        ),
       ],
       child: MyApp(),
     ),
