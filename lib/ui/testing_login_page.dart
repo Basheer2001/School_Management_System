@@ -3,9 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/api/student_api.dart';
+import 'package:project_one/container_two.dart';
 import 'package:project_one/models/login_model.dart';
 import 'package:project_one/services/progress_hud.dart';
 import 'package:project_one/services/shared_prefernces.dart';
+import 'package:project_one/ui/admin_screens/main_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -220,8 +222,20 @@ class _LoginPageState extends State<LoginPage> {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                   SharedService.setLoginDetails(value);
-                                  Navigator.of(context)
-                                      .pushReplacementNamed('/home');
+                                  if (value.accountType == 'owner') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              AdminMainScreen()),
+                                    );
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ContainerTwo()),
+                                    );
+                                  }
                                 } else {
                                   final snackBar =
                                       SnackBar(content: Text('faild to login'));

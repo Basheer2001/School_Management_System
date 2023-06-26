@@ -7,14 +7,15 @@ import 'package:project_one/models/student/student_model.dart';
 class StudentApi {
   Future<LoginModel> login(LoginModel login) async {
     try {
-      var url = Uri.parse('http://192.168.43.103:8000/api/publiclogin');
+      var url = Uri.parse('http://192.168.1.36:8000/api/login');
       final response = await http.post(url, body: login.tojson());
-      if (response.statusCode == 200 || response.statusCode == 400) {
+      if (response.statusCode == 200) {
         return LoginModel.fromjson(jsonDecode(response.body));
       } else {
         throw 'f';
       }
     } catch (e) {
+      print('error:$e');
       throw '$e';
     }
   }
