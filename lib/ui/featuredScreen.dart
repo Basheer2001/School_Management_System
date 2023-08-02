@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/category.dart';
 import 'package:project_one/constants/size.dart';
+import 'package:project_one/ui/admin+owner_screens/add_students.dart';
 
 import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
@@ -264,6 +265,45 @@ Widget body(BuildContext context) {
                 ),
                 Text(
                   'Classes Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Addstudents()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/adding.png',
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Text(
+                  'Add Student',
                   style: Theme.of(context).textTheme.bodyLarge,
                 )
               ],

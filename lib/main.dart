@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/providers/student_provider.dart';
+import 'package:project_one/ui/admin+owner_screens/student_register.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
 
 import 'package:provider/provider.dart';
@@ -69,7 +70,10 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      home: AdminMainScreen(),//admionmainscreen/LoginPage()
+      home:AdminMainScreen(), //StudentRegister(),//AdminMainScreen(),//LoginPage(),
+
+
+
       routes: <String, WidgetBuilder>{
         '/home': (context) => HomePage(),
         '/login': (context) => LoginPage(),
