@@ -17,7 +17,7 @@ class _StudentsTileState extends State<StudentsTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text('bn',style: TextStyle(decoration: isChecked?TextDecoration.lineThrough:null),),
+      leading: Text('student1',style: TextStyle(decoration: isChecked?TextDecoration.lineThrough:null),),
       trailing: Taskcheckbox(isChecked,checkboxCallback),
     );
   }

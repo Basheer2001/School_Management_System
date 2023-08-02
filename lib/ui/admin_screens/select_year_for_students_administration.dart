@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/color.dart';
-import 'package:project_one/ui/admin_screens/view_classes.dart';
+import 'package:project_one/ui/admin_screens/view_sections.dart';
 
 class SelectYearForStudentsAdministration extends StatelessWidget {
   const SelectYearForStudentsAdministration({super.key});
@@ -38,7 +38,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ViewClasses()),
+                      MaterialPageRoute(builder: (context) => ViewSections()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -63,7 +63,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ViewClasses()),
+                      MaterialPageRoute(builder: (context) => ViewSections()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -88,7 +88,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ViewClasses()),
+                      MaterialPageRoute(builder: (context) => ViewSections()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

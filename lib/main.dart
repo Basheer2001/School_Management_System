@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      home: LoginPage(),
+      home: AdminMainScreen(),//admionmainscreen/LoginPage()
       routes: <String, WidgetBuilder>{
         '/home': (context) => HomePage(),
         '/login': (context) => LoginPage(),
