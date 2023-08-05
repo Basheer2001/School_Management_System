@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/ui/admin+owner_screens/student_register.dart';
 
+import '../../Attendance/check_attendance/st_tile.dart';
 import '../../constants/color.dart';
 
 class Addstudents extends StatelessWidget{
@@ -37,7 +38,7 @@ class Addstudents extends StatelessWidget{
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Sectionas1()),
+                      MaterialPageRoute(builder: (context) => ChooseStudent()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -62,7 +63,7 @@ class Addstudents extends StatelessWidget{
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Sectionas1()),
+                      MaterialPageRoute(builder: (context) => ChooseStudent()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -87,7 +88,7 @@ class Addstudents extends StatelessWidget{
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Sectionas1()),
+                      MaterialPageRoute(builder: (context) => ChooseStudent()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -112,6 +113,44 @@ class Addstudents extends StatelessWidget{
     );
   }
 
+}
+class ChooseStudent extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Not added students'),
+      ),
+      body: Container(
+        child: Stack(
+          children:[
+            ListView(
+    children: [ 
+    StudentsTile(),
+    StudentsTile(),
+    StudentsTile(),
+    ],
+      ),
+
+            Positioned(
+              child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Sectionas1()),
+                );
+              }, child: Text('Add'),
+            ),
+              bottom: 20,
+              right: 20,
+            )
+          ],
+        ),
+      
+    )
+      );
+  }
 }
 class Sectionas1 extends StatelessWidget{
   @override
@@ -225,11 +264,7 @@ class Sectionas1 extends StatelessWidget{
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => StudentRegister()),
-                );
+
               },
               child: Container(
                 padding: EdgeInsets.all(10),
@@ -264,11 +299,6 @@ class Sectionas1 extends StatelessWidget{
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => StudentRegister()),
-                );
               },
               child: Container(
                 padding: EdgeInsets.all(10),
@@ -304,11 +334,6 @@ class Sectionas1 extends StatelessWidget{
 
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => StudentRegister()),
-                );
               },
               child: Container(
                 padding: EdgeInsets.all(10),
@@ -341,46 +366,7 @@ class Sectionas1 extends StatelessWidget{
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => StudentRegister()),
-                );
-              },
-              child: Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 4.0,
-                        spreadRadius: 0.05),
-                  ],
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        'images/undraw_Building_re_xfcm (2).png',
-                        height: 120,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                    Text(
-                      'Class D',
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-
-                  ],
-                ),
-              ),
-            ),
+            
 
           ],
         ),
