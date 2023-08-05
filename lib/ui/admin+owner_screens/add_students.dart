@@ -159,6 +159,9 @@ class Sectionas1 extends StatelessWidget{
       return AnnotatedRegion(
         value: SystemUiOverlayStyle.light,
         child: Scaffold(
+          appBar: AppBar(
+            title: Text('Available classes'),
+          ),
           body: Column(
             children: [
               body(context),
