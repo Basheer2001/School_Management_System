@@ -9,9 +9,9 @@ class StudentsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        StudentsTile(),
-        StudentsTile(),
-        StudentsTile(),
+        StudentsTile(trail:true),
+        StudentsTile(trail:true),
+        StudentsTile(trail:true),
       ],
 
     );

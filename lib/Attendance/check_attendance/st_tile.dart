@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
 class StudentsTile extends StatefulWidget {
+   StudentsTile( {this.trail});
+   bool?trail;
+
 
   @override
-  State<StudentsTile> createState() => _StudentsTileState();
+  State<StudentsTile> createState() => _StudentsTileState(
+    w:trail
+  );
 }
 
 class _StudentsTileState extends State<StudentsTile> {
+  _StudentsTileState ( {this.w});
+
+   bool? w ;
+
   bool isChecked = false;
   void checkboxCallback(bool? checkboxState){
     setState(() {
@@ -20,7 +29,7 @@ class _StudentsTileState extends State<StudentsTile> {
       leading: Text('student1',
         //style: TextStyle(decoration: isChecked?TextDecoration.lineThrough:null),
       ),
-      trailing: Taskcheckbox(isChecked,checkboxCallback),
+      trailing: w==true ?Taskcheckbox(isChecked,checkboxCallback):null,
     );
   }
 }
