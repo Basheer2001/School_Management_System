@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/providers/student_provider.dart';
+import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin+owner_screens/student_register.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
 import 'package:project_one/ui/student_screens/main_screen.dart';
@@ -13,6 +14,8 @@ import 'package:provider/provider.dart';
 import 'package:project_one/home_page.dart';
 import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/testing_login_page.dart';
+
+import 'moving.dart';
 
 Widget _defaultHome = LoginPage();
 main() async {
@@ -71,7 +74,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      home:StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
+      home:Move(),//ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
 
 
 

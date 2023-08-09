@@ -8,15 +8,12 @@ class StudentsList extends StatelessWidget {
       children: [
     ListTile(
     leading: Text('bn'),
-    trailing:Icon(Icons.check_box) ,
     ),
     ListTile(
     leading: Text('bn'),
-    trailing:Icon(Icons.check_box) ,
     ),
     ListTile(
     leading: Text('bn'),
-    trailing:Icon(Icons.check_box) ,
     ),
       ],
 

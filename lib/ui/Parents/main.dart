@@ -1,27 +1,18 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/constants/category.dart';
-import 'package:project_one/constants/size.dart';
-import 'package:project_one/ui/admin+owner_screens/add_students.dart';
+import 'package:project_one/ui/Parents/feed_back.dart';
+import 'package:project_one/ui/Parents/profile.dart';
 
-import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
-import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
-
-import 'package:project_one/ui/category_card.dart';
-import 'package:project_one/ui/student_screens/profile.dart';
-
-import 'attendance.dart';
-
-class StudentScreen extends StatefulWidget {
-  const StudentScreen({super.key});
+import '../../constants/color.dart';
+import '../student_screens/main_screen.dart';
+class ParentScreen extends StatefulWidget {
+  const ParentScreen({Key? key}) : super(key: key);
 
   @override
-  State<StudentScreen> createState() => _StudentScreenState();
+  State<ParentScreen> createState() => _ParentScreenState();
 }
 
-class _StudentScreenState extends State<StudentScreen> {
+class _ParentScreenState extends State<ParentScreen> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -37,7 +28,6 @@ class _StudentScreenState extends State<StudentScreen> {
     );
   }
 }
-
 @override
 Widget appBar(BuildContext context) {
   return Container(
@@ -65,7 +55,7 @@ Widget appBar(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Student Mode',
+              'Parent Mode',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
@@ -115,7 +105,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/profile.png',
+                    'images/parentprofile.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -137,7 +127,7 @@ Widget body(BuildContext context) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => SelectYearForSchoolAdministration()),
+                  builder: (context) => SelectProfile()),
             );
           },
           child: Container(
@@ -158,16 +148,16 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/grades.png',
+                    'images/profile.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
                 ),Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Grades',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Student Profile',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    )
                 ),
 
 
@@ -182,7 +172,7 @@ Widget body(BuildContext context) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Attendance()),
+                  builder: (context) => FeedBack()),
             );
           },
           child: Container(
@@ -203,13 +193,13 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/attendance.png',
+                    'images/img_1.png',
                     height: 120,
                   ),
                 ), Align(
                   alignment: Alignment.center,
                   child: Text(
-                    'Attendance',
+                    'Feed Back',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
@@ -219,47 +209,123 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-               // child:Icon(Icons.schedule,size: 100,),
-                  child: Image.asset(
-                    'images/schedule.png',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                 ),Align(
-                  alignment: Alignment.center,
-               // child:Icon(Icons.schedule,size: 100,),
-                  child: Text(
-                    'Schedule',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                 ),
 
-
-              ],
-            ),
-          ),
-        ),
 
       ],
     ),
   );
 }
+
+// ignore_for_file: prefer_const_constructors
+
+
+
+class SelectProfile extends StatelessWidget {
+  const SelectProfile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+      ),
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.light,
+        child: Container(
+          width: double.infinity,
+          // decoration: BoxDecoration(color:Colors.blueGrey),
+          padding: EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Select profile',
+                style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 30),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StudentScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      backgroundColor: kPrimaryColor),
+                  child: Text(
+                    'Basheer KH',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 30),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StudentScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      backgroundColor: kPrimaryColor),
+                  child: Text(
+                    'Adbdulrahman AL',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 30),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => StudentScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.all(15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      backgroundColor: kPrimaryColor),
+                  child: Text(
+                    'Bassam KA',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+

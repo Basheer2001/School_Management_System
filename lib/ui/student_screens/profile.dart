@@ -6,7 +6,6 @@ class Profile extends StatelessWidget{
     return Scaffold(
 
         appBar: AppBar(
-        backgroundColor: Colors.white,
     ),
     body: Container(
       child: Center(
@@ -18,18 +17,94 @@ class Profile extends StatelessWidget{
               radius: 80.0,
             ),
             Container(
-              color: Colors.amber,
-              child: Text('data',style: TextStyle(
-                backgroundColor: Colors.lightBlueAccent
-              ),),
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                border: Border.all(style: BorderStyle.solid),
+              ),
+              child: Row(
+                children: [
+
+                  Text('Name :',
+                  ),
+                  SizedBox(width: 10,),
+                  Text('data',
+                  ),
+                ],
+              ),
             ),
-            Text('data'),
-            Text('data'),
-            Text('data'),
             Container(
-                child: Text('data'),
-              color: Colors.lightBlueAccent,
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                border: Border.all(style: BorderStyle.solid),
+              ),
+              child: Row(
+                children: [
+
+                  Text('Birthdate :',
+                  ),
+                  SizedBox(width: 10,),
+                  Text('12/11/2000',
+                  ),
+                ],
+              ),
+            ), Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                border: Border.all(style: BorderStyle.solid),
+              ),
+              child: Row(
+                children: [
+
+                  Text('class :',
+                  ),
+                  SizedBox(width: 10,),
+                  Text('data',
+                  ),
+                ],
+              ),
+            ), Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                border: Border.all(style: BorderStyle.solid),
+              ),
+              child: Row(
+                children: [
+
+                  Text('Name :',
+                  ),
+                  SizedBox(width: 10,),
+                  Text('data',
+                  ),
+                ],
+              ),
+            ), Container(
+              padding: EdgeInsets.all(20),
+              margin: EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15)),
+                border: Border.all(style: BorderStyle.solid),
+              ),
+              child: Row(
+                children: [
+
+                  Text('Birthdate :',
+                  ),
+                  SizedBox(width: 10,),
+                  Text('data',
+                  ),
+                ],
+              ),
             ),
+
+
           ],
         ),
       ),
