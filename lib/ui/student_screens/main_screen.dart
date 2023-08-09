@@ -134,11 +134,7 @@ Widget body(BuildContext context) {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SelectYearForSchoolAdministration()),
-            );
+
           },
           child: Container(
             padding: EdgeInsets.all(10),

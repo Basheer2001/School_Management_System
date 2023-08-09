@@ -43,14 +43,7 @@ class _MoveState extends State<Move> {
               );
             },
                 child: Text('Admin'))     ,
-            ElevatedButton(
-                onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => StudentScreen()),
-              );
-            },
-                child: Text('student ')),
+
           ],
         ),
       ),
