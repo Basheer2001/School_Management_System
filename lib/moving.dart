@@ -20,22 +20,7 @@ class _MoveState extends State<Move> {
         color: Colors.grey,
         child: Column(
           children: [
-            ElevatedButton(
-                onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => StudentScreen()),
-              );
-            },
-                child: Text('student profile'))  ,
-            ElevatedButton(
-                onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ParentScreen()),
-              );
-            },
-                child: Text('parent')) ,
+
             ElevatedButton(
                 onPressed: (){
               Navigator.push(
@@ -52,6 +37,23 @@ class _MoveState extends State<Move> {
               );
             },
                 child: Text('Teacher'))     ,
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ParentScreen()),
+                  );
+                },
+                child: Text('parent')) ,
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => StudentScreen()),
+                  );
+                },
+                child: Text('student '))  ,
+
 
           ],
         ),

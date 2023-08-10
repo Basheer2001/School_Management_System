@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../Attendance/check_attendance/st_tile.dart';
+import '../../widgets/list_tile.dart';
 import '../../constants/color.dart';
 
 class Addstudents extends StatelessWidget{
@@ -131,9 +131,9 @@ class _ChooseStudentState extends State<ChooseStudent> {
           children:[
             ListView(
     children: [
-    StudentsTile( trail: true),
-    StudentsTile(trail: true),
-    StudentsTile(trail: true),
+    ListTile1( trail: true, lead: 'st',),
+    ListTile1(trail: true, lead: 'st',),
+    ListTile1(trail: true, lead: 'st',),
     ],
       ),
 

@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      home:Move(),//ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
+      home:Move(),//StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
 
 
 

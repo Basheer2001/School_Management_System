@@ -17,6 +17,7 @@ class StudentRegister extends StatefulWidget {
 }
 
 class _StudentRegisterState extends State<StudentRegister> {
+  String year = 'Select year';
   final scaffoldKey = GlobalKey<ScaffoldState>();
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
   bool isApiCallProcess = false;
@@ -48,6 +49,16 @@ class _StudentRegisterState extends State<StudentRegister> {
 
   Widget _uiSetup(BuildContext context) {
     return Scaffold(
+
+      appBar: AppBar(
+        title: Text(
+          'Student Register',
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
+        ),
+      ),
       key: scaffoldKey,
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
@@ -62,10 +73,10 @@ class _StudentRegisterState extends State<StudentRegister> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0x665ac18e),
-                    Color(0x995ac18e),
-                    Color(0xcc5ac18e),
-                    Color(0xff5ac18e),
+                    Color(0x665a5fc1),
+                    Color(0x995a68c1),
+                    Color(0xcc5d5ac1),
+                    Color(0xff5a63c1),
                   ],
                 ),
               ),
@@ -73,19 +84,12 @@ class _StudentRegisterState extends State<StudentRegister> {
                 physics: AlwaysScrollableScrollPhysics(),
                 padding: EdgeInsets.symmetric(
                   horizontal: 25,
-                  vertical: 120,
+                  vertical: 20,
                 ),
                 child: Form(
                   key: globalFormKey,
                   child: Column(
                     children: <Widget>[
-                      Text(
-                        'Student Register',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold),
-                      ),
                       FirstCustomTextFormField(
                         name: 'name',
                         hintText: 'enter name',
@@ -110,6 +114,56 @@ class _StudentRegisterState extends State<StudentRegister> {
                         purpose: 'register',
                         studentModel: studentModel,
                       ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        height: 55.0,
+                        child: PopupMenuButton(
+                            child: Center(
+                              child: Text('$year',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                            ),
+                            itemBuilder:
+                                (context) {
+                              return [
+                                PopupMenuItem<int>(value: 0, child: Text('10')),
+                                PopupMenuItem<int>(value: 1, child: Text('11')),
+                                PopupMenuItem<int>(value: 2, child: Text('12')),
+
+                              ];
+                            },
+                            onSelected: (value) {
+                              if (value == 0) {
+                                setState(() {
+                                  year = '10';
+                                });
+                              }
+                              if (value == 1) {
+                                setState(() {
+                                  year = '11';
+                                });
+                              }
+                              if (value == 2) {
+                                setState(() {
+                                  year = '12';
+                                });
+                              }
+                            }
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+
 
                       FirstCustomTextFormField(
                         name: 'address',
@@ -168,7 +222,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                           child: Text(
                             'Create Account',
                             style: TextStyle(
-                                color: Color(0xff5ac18e),
+                                 color: Color(0x995a68c1),
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                           ),
