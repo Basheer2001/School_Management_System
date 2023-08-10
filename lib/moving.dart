@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
 import 'package:project_one/ui/student_screens/main_screen.dart';
+import 'package:project_one/ui/teachers/main_teacher.dart';
 class Move extends StatefulWidget {
   const Move({Key? key}) : super(key: key);
 
@@ -43,6 +44,14 @@ class _MoveState extends State<Move> {
               );
             },
                 child: Text('Admin'))     ,
+            ElevatedButton(
+                onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Teacher()),
+              );
+            },
+                child: Text('Teacher'))     ,
 
           ],
         ),
