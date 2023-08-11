@@ -40,7 +40,7 @@ class _StudentScreenState extends State<StudentScreen> {
 @override
 Widget appBar(BuildContext context) {
   return Container(
-    padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+    padding: EdgeInsets.only(top: 50, left: 19, right: 20),
     height: 150,
     width: double.infinity,
     decoration: BoxDecoration(
