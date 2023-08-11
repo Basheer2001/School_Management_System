@@ -1,18 +1,15 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
+import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
+import 'package:project_one/ui/admin_screens/student_admenstration0.dart';
+import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 import 'package:flutter/services.dart';
 
-import '../Parents/profile.dart';
+class OwnerMainScreen extends StatelessWidget {
+  const OwnerMainScreen({super.key});
 
-class TeacherScreen extends StatefulWidget {
-  const TeacherScreen({super.key});
-
-  @override
-  State<TeacherScreen> createState() => _TeacherScreenState();
-}
-
-class _TeacherScreenState extends State<TeacherScreen> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -56,7 +53,7 @@ Widget appBar(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Teacher Mode',
+              'Owner Mode',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
@@ -84,7 +81,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Profile()),
+              MaterialPageRoute(builder: (context) => StudentAdminstration0()),
             );
           },
           child: Container(
@@ -105,17 +102,89 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/parentprofile.png',
+                    'images/students.jpg',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
                 ),
+                Text(
+                  'Students Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TeachersAdminstration()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 Align(
                   alignment: Alignment.center,
-                  child: Text(
-                    'My profile',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                  child: Image.asset(
+                    'images/teachers.png',
+                    height: 120,
+                    fit: BoxFit.contain,
                   ),
+                ),
+                Text(
+                  'Teachers Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ParentAdminstration()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/parent.png',
+                    height: 120,
+                  ),
+                ),
+                Text(
+                  'Parents Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],
             ),
@@ -141,23 +210,27 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/grades.png',
+                    'images/admin.jpg',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
                 ),
-                Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Add Grades',
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    )),
+                Text(
+                  'Admins Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
               ],
             ),
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => SelectYearForStudentsAdministration()),
+            );
+          },
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
@@ -175,21 +248,16 @@ Widget body(BuildContext context) {
               children: [
                 Align(
                   alignment: Alignment.center,
-                  // child:Icon(Icons.schedule,size: 100,),
                   child: Image.asset(
-                    'images/schedule.png',
+                    'images/undraw_Building_re_xfcm (2).png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  // child:Icon(Icons.schedule,size: 100,),
-                  child: Text(
-                    'Schedule',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ),
+                Text(
+                  'Classes Administration',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
               ],
             ),
           ),

@@ -2,19 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/constants/category.dart';
-import 'package:project_one/constants/size.dart';
-import 'package:project_one/ui/admin+owner_screens/add_students.dart';
+
 import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
 
-import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 
-import 'package:project_one/ui/category_card.dart';
-
 import 'admin_screens/student_admenstration0.dart';
-import 'admin_screens/view_teachers.dart';
 
 class FeaturedScreen extends StatefulWidget {
   const FeaturedScreen({super.key});
@@ -95,8 +89,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => StudentAdminstration0()),
+              MaterialPageRoute(builder: (context) => StudentAdminstration0()),
             );
           },
           child: Container(
@@ -134,10 +127,8 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => TeachersAdminstration()),
+              MaterialPageRoute(builder: (context) => TeachersAdminstration()),
             );
-
           },
           child: Container(
             padding: EdgeInsets.all(10),
@@ -170,14 +161,11 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
-
         GestureDetector(
           onTap: () {
-
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => ParentAdminstration()),
+              MaterialPageRoute(builder: (context) => ParentAdminstration()),
             );
           },
           child: Container(
@@ -206,7 +194,6 @@ Widget body(BuildContext context) {
                   'Parents Administration',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-
               ],
             ),
           ),
@@ -240,7 +227,6 @@ Widget body(BuildContext context) {
                   'Admins Administration',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-
               ],
             ),
           ),

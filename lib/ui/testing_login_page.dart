@@ -2,12 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/api/student_api.dart';
-import 'package:project_one/container_two.dart';
+import 'package:project_one/api/login.dart';
+
 import 'package:project_one/models/login_model.dart';
+import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/services/progress_hud.dart';
 import 'package:project_one/services/shared_prefernces.dart';
+import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
+import 'package:project_one/ui/owner_screns/main_screen.dart';
+import 'package:project_one/ui/teachers/main_teacher.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -158,6 +163,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _uiSetup(BuildContext context) {
+    final provider = Provider.of<AdminProivder>(context);
     return Scaffold(
       key: scaffoldKey,
       body: AnnotatedRegion<SystemUiOverlayStyle>(
@@ -210,30 +216,48 @@ class _LoginPageState extends State<LoginPage> {
                               setState(() {
                                 isApiCallProcess = true;
                               });
-                              StudentApi studentApi = StudentApi();
-                              studentApi.login(requestModel!).then((value) {
+                              LoginApi loginApi = LoginApi();
+                              loginApi.login(requestModel!).then((value) {
                                 setState(() {
                                   isApiCallProcess = false;
                                 });
                                 if (value.token!.isNotEmpty) {
+                                  print(value.token);
                                   final snackBar = SnackBar(
                                       content: Text('Login Successful'));
                                   //  print(value.token);
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                   SharedService.setLoginDetails(value);
-                                  if (value.accountType == 'owner') {
+                                  SharedService.saveToken(value);
+                                  SharedService.saveRole(value);
+
+                                  if (value.role == 'owner') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              OwnerMainScreen()),
+                                    );
+                                  } else if (value.role == 'admin') {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               AdminMainScreen()),
                                     );
-                                  } else {
+                                  } else if (value.role == 'teacher') {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => ContainerTwo()),
+                                          builder: (context) =>
+                                              TeacherScreen()),
+                                    );
+                                  } else if (value.role == 'parent') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ParentScreen()),
                                     );
                                   }
                                 } else {

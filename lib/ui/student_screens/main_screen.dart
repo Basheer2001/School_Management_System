@@ -9,7 +9,6 @@ import 'package:project_one/ui/admin+owner_screens/add_students.dart';
 import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 
-import 'package:project_one/ui/category_card.dart';
 import 'package:project_one/ui/student_screens/profile.dart';
 
 import 'attendance.dart';
@@ -93,8 +92,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => Profile()),
+              MaterialPageRoute(builder: (context) => Profile()),
             );
           },
           child: Container(
@@ -127,90 +125,6 @@ Widget body(BuildContext context) {
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
-
-              ],
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/grades.png',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                ),Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Grades',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  )
-                ),
-
-
-              ],
-            ),
-          ),
-        ),
-
-        GestureDetector(
-          onTap: () {
-
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Attendance()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/attendance.png',
-                    height: 120,
-                  ),
-                ), Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'Attendance',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ),
-
-
               ],
             ),
           ),
@@ -234,27 +148,100 @@ Widget body(BuildContext context) {
               children: [
                 Align(
                   alignment: Alignment.center,
-               // child:Icon(Icons.schedule,size: 100,),
+                  child: Image.asset(
+                    'images/grades.png',
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Grades',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    )),
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Attendance()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/attendance.png',
+                    height: 120,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Attendance',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  // child:Icon(Icons.schedule,size: 100,),
                   child: Image.asset(
                     'images/schedule.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
-                 ),Align(
+                ),
+                Align(
                   alignment: Alignment.center,
-               // child:Icon(Icons.schedule,size: 100,),
+                  // child:Icon(Icons.schedule,size: 100,),
                   child: Text(
                     'Schedule',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
-                 ),
-
-
+                ),
               ],
             ),
           ),
         ),
-
       ],
     ),
   );
