@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/main.dart';
 
 import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
 
@@ -88,6 +89,7 @@ Widget body(BuildContext context) {
       children: [
         GestureDetector(
           onTap: () {
+            //  print(token);
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => StudentAdminstration0()),

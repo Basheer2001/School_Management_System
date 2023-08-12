@@ -6,28 +6,28 @@ import 'package:shared_preferences/shared_preferences.dart';
 class SharedService {
   static Future<bool> isLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString('login_details') != null ? true : false;
+    return prefs.getString('token') != null ? true : false;
   }
 
   static Future<void> setLoginDetails(LoginModel model) async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString(
-        'login_details', jsonEncode(<String, dynamic>{'token': model.token}));
+    prefs.setString('token', model.token.toString());
   }
 
   static Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.remove('token');
+    //  prefs.remove('token');
+    prefs.clear();
   }
 
   //
   //
   // يلي تحت بدهن بجريب مالي مجربهن
 
-  static Future<void> saveToken(LoginModel model) async {
-    final prefs = await SharedPreferences.getInstance();
-    var token = prefs.setString('token', model.token.toString());
-  }
+  // static Future<void> saveToken(LoginModel model) async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   var token = prefs.setString('token', model.token.toString());
+  // }
 
   static Future<String> getToken() async {
     final prefs = await SharedPreferences.getInstance();

@@ -20,15 +20,18 @@ import 'package:project_one/ui/testing_login_page.dart';
 
 import 'moving.dart';
 
+String? token;
+String? role;
+
 Widget _defaultHome = LoginPage();
 main() async {
 //put async
   WidgetsFlutterBinding.ensureInitialized();
+
   bool isLoggedIn = await SharedService.isLoggedIn();
   if (isLoggedIn) {
     // يلي عليهن تعليقات بدهن تجريب مالي مجربهن
 
-    // String role = await SharedService.getRole();
     // if(role=='owner'){
     //     _defaultHome = OwnerMainScreen();
     // }
