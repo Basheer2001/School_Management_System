@@ -10,6 +10,7 @@ import 'package:project_one/ui/admin_screens/select_year_for_class_administratio
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 
 import 'package:project_one/ui/student_screens/profile.dart';
+import 'package:project_one/ui/student_screens/show_grades.dart';
 
 import 'attendance.dart';
 
@@ -130,7 +131,11 @@ Widget body(BuildContext context) {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Result()),
+            );},
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(

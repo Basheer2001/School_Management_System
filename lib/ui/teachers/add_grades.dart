@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 
 
-class GradesPage extends StatefulWidget {
-  const GradesPage({super.key});
+class AddGrades extends StatefulWidget {
+  const AddGrades({super.key});
 
   @override
-  _GradesPageState createState() => _GradesPageState();
+  _AddGradesState createState() => _AddGradesState();
 }
 
-class _GradesPageState extends State<GradesPage> {
+class _AddGradesState extends State<AddGrades> {
   List<String> subjects = ['رياضيات', 'فيزياء', 'كيمياء', 'علوم','عربي','انكليزي','فرنسي'];
   Map<String, double> grades = {};
   Map<String, double> eval = {};

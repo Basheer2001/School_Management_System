@@ -4,6 +4,10 @@ import 'package:project_one/ui/admin_screens/main_screen.dart';
 import 'package:project_one/ui/student_screens/main_screen.dart';
 import 'package:project_one/ui/teachers/main_teacher.dart';
 
+import 'ui/student_screens/show_grades.dart';
+import 'ui/teachers/add_grades.dart';
+import 'ui/admin_screens/add_program.dart';
+
 class Move extends StatefulWidget {
   const Move({Key? key}) : super(key: key);
 
@@ -50,6 +54,14 @@ class _MoveState extends State<Move> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => StudentScreen()),
+                  );
+                },
+                child: Text('student ')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Result()),
                   );
                 },
                 child: Text('student ')),

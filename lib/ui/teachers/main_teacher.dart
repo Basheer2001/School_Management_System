@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/ui/teachers/SelectYearForAddGrades.dart';
 
 import '../Parents/profile.dart';
 
@@ -122,7 +123,13 @@ Widget body(BuildContext context) {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SelectYearForAddGrades()),
+            );
+
+          },
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
