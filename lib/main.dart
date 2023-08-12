@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 
 import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/providers/student_provider.dart';
-import 'package:project_one/ui/admin+owner_screens/student_register.dart';
+import 'package:project_one/providers/teacher_provider.dart';
+import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
+import 'package:project_one/ui/owner_screns/main_screen.dart';
+import 'package:project_one/ui/student_screens/main_screen.dart';
+import 'package:project_one/ui/superadmin/main_screen.dart';
+import 'package:project_one/ui/teachers/main_teacher.dart';
 
 import 'package:provider/provider.dart';
 
@@ -13,13 +18,37 @@ import 'package:project_one/home_page.dart';
 import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/testing_login_page.dart';
 
+import 'moving.dart';
+
 Widget _defaultHome = LoginPage();
 main() async {
 //put async
   WidgetsFlutterBinding.ensureInitialized();
   bool isLoggedIn = await SharedService.isLoggedIn();
   if (isLoggedIn) {
-    _defaultHome = HomePage();
+    // يلي عليهن تعليقات بدهن تجريب مالي مجربهن
+
+    // String role = await SharedService.getRole();
+    // if(role=='owner'){
+    //     _defaultHome = OwnerMainScreen();
+    // }
+    //    else if(role=='superadmin'){
+    //     _defaultHome = SuperAdminMainScreen();
+    // }
+    //    else if(role=='admin'){
+    //     _defaultHome = AdminMainScreen();
+    // }
+    //   else  if(role=='teacher'){
+    //     _defaultHome = TeacherScreen();
+    // }
+    //   else  if(role=='parent'){
+    //     _defaultHome = ParentScreen();
+    // }
+    // else{
+    //    _defaultHome = StudentScreen();
+    // }
+
+    _defaultHome = AdminMainScreen();
   }
   runApp(
     MultiProvider(
@@ -29,6 +58,9 @@ main() async {
         ),
         ChangeNotifierProvider<AdminProivder>(
           create: (_) => AdminProivder(),
+        ),
+        ChangeNotifierProvider<TeachersProvider>(
+          create: (_) => TeachersProvider(),
         ),
       ],
       child: MyApp(),
@@ -70,9 +102,8 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
       ),
-      home:AdminMainScreen(), //StudentRegister(),//AdminMainScreen(),//LoginPage(),
-
-
+      home:
+          Move(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
 
       routes: <String, WidgetBuilder>{
         '/home': (context) => HomePage(),

@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/ui/admin+owner_screens/student_register.dart';
 
-import '../../Attendance/check_attendance/st_tile.dart';
+import '../../widgets/list_tile.dart';
 import '../../constants/color.dart';
 
 class Addstudents extends StatelessWidget{
@@ -114,7 +113,12 @@ class Addstudents extends StatelessWidget{
   }
 
 }
-class ChooseStudent extends StatelessWidget{
+class ChooseStudent extends StatefulWidget{
+  @override
+  State<ChooseStudent> createState() => _ChooseStudentState();
+}
+
+class _ChooseStudentState extends State<ChooseStudent> {
   @override
 
   Widget build(BuildContext context) {
@@ -126,10 +130,10 @@ class ChooseStudent extends StatelessWidget{
         child: Stack(
           children:[
             ListView(
-    children: [ 
-    StudentsTile(),
-    StudentsTile(),
-    StudentsTile(),
+    children: [
+    ListTile1( trail: true, lead: 'st',),
+    ListTile1(trail: true, lead: 'st',),
+    ListTile1(trail: true, lead: 'st',),
     ],
       ),
 
@@ -147,7 +151,7 @@ class ChooseStudent extends StatelessWidget{
             )
           ],
         ),
-      
+
     )
       );
   }

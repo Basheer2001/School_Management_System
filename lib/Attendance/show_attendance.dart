@@ -7,16 +7,13 @@ class StudentsList extends StatelessWidget {
     return ListView(
       children: [
     ListTile(
-    leading: Text('bn'),
-    trailing:Icon(Icons.check_box) ,
+    leading: Text('st'),
     ),
     ListTile(
-    leading: Text('bn'),
-    trailing:Icon(Icons.check_box) ,
+    leading: Text('st'),
     ),
     ListTile(
-    leading: Text('bn'),
-    trailing:Icon(Icons.check_box) ,
+    leading: Text('st'),
     ),
       ],
 

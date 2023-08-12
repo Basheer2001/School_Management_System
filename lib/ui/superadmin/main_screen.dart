@@ -1,23 +1,15 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
+import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
+import 'package:project_one/ui/admin_screens/student_admenstration0.dart';
+import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 import 'package:flutter/services.dart';
 
-import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
+class SuperAdminMainScreen extends StatelessWidget {
+  const SuperAdminMainScreen({super.key});
 
-import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
-import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
-
-import 'admin_screens/student_admenstration0.dart';
-
-class FeaturedScreen extends StatefulWidget {
-  const FeaturedScreen({super.key});
-
-  @override
-  State<FeaturedScreen> createState() => _FeaturedScreenState();
-}
-
-class _FeaturedScreenState extends State<FeaturedScreen> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
@@ -61,7 +53,7 @@ Widget appBar(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Admin Mode',
+              'Owner Mode',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
