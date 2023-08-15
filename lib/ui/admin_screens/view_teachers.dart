@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:project_one/models/teacher/view_teachers_model.dart';
 import 'package:project_one/providers/teacher_provider.dart';
 import 'package:project_one/ui/admin+owner_screens/Teacher_Register.dart';
+import 'package:project_one/ui/admin+owner_screens/teacher_profile_details.dart';
 import 'package:project_one/ui/admin_screens/teachers_list.dart';
+import 'package:project_one/ui/teachers/test_profile.dart';
 import 'package:provider/provider.dart';
 
 class ViewTeachers extends StatelessWidget {
@@ -23,10 +25,14 @@ class ViewTeachers extends StatelessWidget {
       );
     } else {
       print('else');
-      viewTeachersModel = provider.secondTest;
+      viewTeachersModel = provider.viewTeachersModel;
+      //provider.refreshState();
     }
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text('View Teachers'),
+          actions: [],
+        ),
         body: Container(
           color: Colors.grey[200],
           padding: EdgeInsets.all(10),
@@ -34,11 +40,36 @@ class ViewTeachers extends StatelessWidget {
             itemCount: viewTeachersModel.teachers!.length,
             itemBuilder: ((context, i) {
               Teachers myteacher = viewTeachersModel.teachers![i];
+              //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
+
               return Card(
                 child: ListTile(
-                  onTap: () {},
-                  title: Text(myteacher.firstName),
-                  subtitle: Text(myteacher.firstName),
+                  onTap: () {
+                    provider.refreshState();
+
+                    int id = myteacher.id;
+                    print(id);
+                    provider.getid(id);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TeacherProfileDetails()),
+                    );
+                  },
+                  title: RichText(
+                    text: TextSpan(children: [
+                      TextSpan(
+                        text: myteacher.firstName,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                      TextSpan(
+                        text: ' ${myteacher.lastName}', //teacherModel.name,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      )
+                    ]),
+                  ),
+
+                  //subtitle: Text(myteacher.lastName),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),

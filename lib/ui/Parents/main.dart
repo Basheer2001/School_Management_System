@@ -5,6 +5,7 @@ import 'package:project_one/ui/Parents/profile.dart';
 
 import '../../constants/color.dart';
 import '../student_screens/main_screen.dart';
+
 class ParentScreen extends StatefulWidget {
   const ParentScreen({Key? key}) : super(key: key);
 
@@ -28,6 +29,7 @@ class _ParentScreenState extends State<ParentScreen> {
     );
   }
 }
+
 @override
 Widget appBar(BuildContext context) {
   return Container(
@@ -83,8 +85,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => Profile()),
+              MaterialPageRoute(builder: (context) => ParentProfile()),
             );
           },
           child: Container(
@@ -117,7 +118,6 @@ Widget body(BuildContext context) {
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
-
               ],
             ),
           ),
@@ -126,8 +126,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => SelectProfile()),
+              MaterialPageRoute(builder: (context) => SelectProfile()),
             );
           },
           child: Container(
@@ -152,27 +151,22 @@ Widget body(BuildContext context) {
                     height: 120,
                     fit: BoxFit.contain,
                   ),
-                ),Align(
+                ),
+                Align(
                     alignment: Alignment.center,
                     child: Text(
                       'Student Profile',
                       style: Theme.of(context).textTheme.bodyLarge,
-                    )
-                ),
-
-
+                    )),
               ],
             ),
           ),
         ),
-
         GestureDetector(
           onTap: () {
-
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => FeedBack()),
+              MaterialPageRoute(builder: (context) => FeedBack()),
             );
           },
           child: Container(
@@ -196,29 +190,24 @@ Widget body(BuildContext context) {
                     'images/img_1.png',
                     height: 120,
                   ),
-                ), Align(
+                ),
+                Align(
                   alignment: Alignment.center,
                   child: Text(
                     'Feed Back',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
-
-
               ],
             ),
           ),
         ),
-
-
       ],
     ),
   );
 }
 
 // ignore_for_file: prefer_const_constructors
-
-
 
 class SelectProfile extends StatelessWidget {
   const SelectProfile({super.key});
@@ -328,4 +317,3 @@ class SelectProfile extends StatelessWidget {
     );
   }
 }
-

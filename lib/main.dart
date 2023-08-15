@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:project_one/constants/color.dart';
 
 import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/providers/student_provider.dart';
@@ -18,6 +19,7 @@ import 'package:project_one/home_page.dart';
 import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/testing_login_page.dart';
 
+import 'Attendance/check_attendance/st_list.dart';
 import 'moving.dart';
 
 String? token;
@@ -51,7 +53,7 @@ main() async {
     //    _defaultHome = StudentScreen();
     // }
 
-    _defaultHome = AdminMainScreen();
+    _defaultHome = OwnerMainScreen();
   }
   runApp(
     MultiProvider(
@@ -85,7 +87,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'School Management',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: kPrimaryColor,
+
+        primarySwatch: Colors.deepPurple,
         //fontFamily:
         textTheme: TextTheme(
           titleLarge: TextStyle(

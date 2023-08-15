@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/api/login.dart';
+import 'package:project_one/constants/color.dart';
 
 import 'package:project_one/models/login_model.dart';
 import 'package:project_one/providers/admin_provider.dart';
@@ -237,6 +238,7 @@ class _LoginPageState extends State<LoginPage> {
                                   // SharedService.saveRole(value);
                                   token = await SharedService.getToken();
                                   role = await SharedService.getRole();
+                                  print('first token $token');
                                   //   print('shared token:$mytoken');
 
                                   if (value.role == 'owner') {
@@ -299,7 +301,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'Log in',
                             style: TextStyle(
-                                color: Color(0xff5ac18e),
+                                color: kPrimaryColor,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                           ),

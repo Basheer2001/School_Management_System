@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:project_one/models/login_model.dart';
 import 'package:project_one/models/student/student_model.dart';
-import 'package:project_one/models/teacher_model.dart';
+import 'package:project_one/models/teacher/teacher_model.dart';
 
 class FirstCustomTextFormField extends StatelessWidget {
   final String name;
   final String hintText;
   final String validationError;
   IconData icon;
-  TeachcherModel? teacherModel;
+  TeacherModel? teacherModel;
   LoginModel? requestModel;
   StudentModel? studentModel;
   //var validation;
@@ -106,15 +106,10 @@ class FirstCustomTextFormField extends StatelessWidget {
                   if (name == 'name')
                     teacherModel!.name = input!;
                   else if (name == 'second name')
-                    teacherModel!.secondName = input.toString();
-                  else if (name == 'subject')
-                    teacherModel!.subject = input!;
+                    teacherModel!.lastName = input.toString();
                   else if (name == 'phone number')
-                    teacherModel!.phoneNumber = input as int;
-                  else if (name == 'address')
-                    teacherModel!.address = input!;
-                  else if (name == 'experinces')
-                    teacherModel!.experinces = input!;
+                    teacherModel!.phoneNumber = input;
+                  else if (name == 'address') teacherModel!.address = input!;
                 }
               }
             },

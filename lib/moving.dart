@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
+import 'package:project_one/ui/owner_screns/main_screen.dart';
 import 'package:project_one/ui/student_screens/main_screen.dart';
+import 'package:project_one/ui/superadmin/main_screen.dart';
 import 'package:project_one/ui/teachers/main_teacher.dart';
 
 import 'ui/student_screens/show_grades.dart';
@@ -25,6 +27,23 @@ class _MoveState extends State<Move> {
         color: Colors.grey,
         child: Column(
           children: [
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OwnerMainScreen()),
+                  );
+                },
+                child: Text('Owner')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => SuperAdminMainScreen()),
+                  );
+                },
+                child: Text('Super Admin')),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -64,7 +83,7 @@ class _MoveState extends State<Move> {
                     MaterialPageRoute(builder: (context) => Result()),
                   );
                 },
-                child: Text('student ')),
+                child: Text('results ')),
           ],
         ),
       ),
