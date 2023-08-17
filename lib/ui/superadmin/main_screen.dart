@@ -140,7 +140,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/teachers.png',
+                    'images/teacher2.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -210,7 +210,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/admin.jpg',
+                    'images/admin2.jpg',
                     height: 120,
                     fit: BoxFit.contain,
                   ),

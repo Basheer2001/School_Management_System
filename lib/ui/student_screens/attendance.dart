@@ -13,7 +13,7 @@ class _AttendanceState extends State<Attendance> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor:  Color(0xff886ff2),),
       body: Container(
         child: Center(
           child: ListView(
