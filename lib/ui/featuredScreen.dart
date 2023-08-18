@@ -2,12 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/main.dart';
 
 import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
 
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 
+import 'admin_screens/class_adminstration.dart';
 import 'admin_screens/student_admenstration0.dart';
 
 class FeaturedScreen extends StatefulWidget {
@@ -87,6 +89,7 @@ Widget body(BuildContext context) {
       children: [
         GestureDetector(
           onTap: () {
+            //  print(token);
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => StudentAdminstration0()),
@@ -236,7 +239,7 @@ Widget body(BuildContext context) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => SelectYearForStudentsAdministration()),
+                  builder: (context) => ClassAdminstration()),
             );
           },
           child: Container(

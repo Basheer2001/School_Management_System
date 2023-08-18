@@ -49,14 +49,11 @@ class _StudentRegisterState extends State<StudentRegister> {
 
   Widget _uiSetup(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         title: Text(
           'Student Register',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       key: scaffoldKey,
@@ -126,19 +123,18 @@ class _StudentRegisterState extends State<StudentRegister> {
                         height: 55.0,
                         child: PopupMenuButton(
                             child: Center(
-                              child: Text('$year',
-                              style: TextStyle(
-                                color: Colors.grey,
+                              child: Text(
+                                '$year',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                ),
                               ),
                             ),
-                            ),
-                            itemBuilder:
-                                (context) {
+                            itemBuilder: (context) {
                               return [
                                 PopupMenuItem<int>(value: 0, child: Text('10')),
                                 PopupMenuItem<int>(value: 1, child: Text('11')),
                                 PopupMenuItem<int>(value: 2, child: Text('12')),
-
                               ];
                             },
                             onSelected: (value) {
@@ -157,13 +153,11 @@ class _StudentRegisterState extends State<StudentRegister> {
                                   year = '12';
                                 });
                               }
-                            }
-                        ),
+                            }),
                       ),
                       SizedBox(
                         height: 20.0,
                       ),
-
 
                       FirstCustomTextFormField(
                         name: 'address',
@@ -187,31 +181,31 @@ class _StudentRegisterState extends State<StudentRegister> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                            if (validateAndSave()) {
-                              setState(() {
-                                isApiCallProcess = true;
-                              });
-                              StudentApi studentApi = StudentApi();
-                              studentApi.login(loginModel!).then((value) {
-                                setState(() {
-                                  isApiCallProcess = false;
-                                });
-                                if (value.token!.isNotEmpty) {
-                                  final snackBar = SnackBar(
-                                      content: Text('Login Successful'));
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(snackBar);
-                                  SharedService.setLoginDetails(value);
-                                  Navigator.of(context)
-                                      .pushReplacementNamed('/home');
-                                } else {
-                                  final snackBar =
-                                      SnackBar(content: Text(' failed to login'));
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(snackBar);
-                                }
-                              });
-                            }
+                            // if (validateAndSave()) {
+                            //   setState(() {
+                            //     isApiCallProcess = true;
+                            //   });
+                            //   StudentApi studentApi = StudentApi();
+                            //   studentApi.login(loginModel!).then((value) {
+                            //     setState(() {
+                            //       isApiCallProcess = false;
+                            //     });
+                            //     if (value.token!.isNotEmpty) {
+                            //       final snackBar = SnackBar(
+                            //           content: Text('Login Successful'));
+                            //       ScaffoldMessenger.of(context)
+                            //           .showSnackBar(snackBar);
+                            //       SharedService.setLoginDetails(value);
+                            //       Navigator.of(context)
+                            //           .pushReplacementNamed('/home');
+                            //     } else {
+                            //       final snackBar =
+                            //           SnackBar(content: Text(' failed to login'));
+                            //       ScaffoldMessenger.of(context)
+                            //           .showSnackBar(snackBar);
+                            //     }
+                            //   });
+                            // }
                           },
                           style: ElevatedButton.styleFrom(
                               padding: EdgeInsets.all(15),
@@ -222,7 +216,7 @@ class _StudentRegisterState extends State<StudentRegister> {
                           child: Text(
                             'Create Account',
                             style: TextStyle(
-                                 color: Color(0x995a68c1),
+                                color: Color(0x995a68c1),
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                           ),

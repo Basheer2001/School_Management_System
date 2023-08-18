@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/color.dart';
-import 'package:project_one/ui/admin_screens/view_sections.dart';
+import 'package:project_one/ui/teachers/SectionsForAddGrades.dart';
 
-class SelectYearForClassAdministration extends StatelessWidget {
-  const SelectYearForClassAdministration({super.key});
+class SelectYearForAddGrades extends StatelessWidget {
+  const SelectYearForAddGrades({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class SelectYearForClassAdministration extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ViewSections()),
+                      MaterialPageRoute(builder: (context) => SectionsForAddGrades()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -63,7 +63,7 @@ class SelectYearForClassAdministration extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ViewSections()),
+                      MaterialPageRoute(builder: (context) => SectionsForAddGrades()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -88,7 +88,7 @@ class SelectYearForClassAdministration extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ViewSections()),
+                      MaterialPageRoute(builder: (context) => SectionsForAddGrades()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

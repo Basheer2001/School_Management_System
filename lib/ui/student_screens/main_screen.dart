@@ -4,14 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/category.dart';
 import 'package:project_one/constants/size.dart';
-import 'package:project_one/new_alaa/show_grades.dart';
 import 'package:project_one/ui/admin+owner_screens/add_students.dart';
 
 import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 
 import 'package:project_one/ui/student_screens/profile.dart';
-import 'package:project_one/ui/student_screens/view_schedule.dart';
+import 'package:project_one/ui/student_screens/show_grades.dart';
 
 import 'attendance.dart';
 
@@ -133,8 +132,10 @@ Widget body(BuildContext context) {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Result()));
-          },
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Result()),
+            );},
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
@@ -209,9 +210,7 @@ Widget body(BuildContext context) {
           ),
         ),
         GestureDetector(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ViewSchedule()));
-          },
+          onTap: () {},
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(

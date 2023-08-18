@@ -49,14 +49,11 @@ class _ParentRegisterState extends State<ParentRegister> {
 
   Widget _uiSetup(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         title: Text(
           'Parent Register',
           style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ),
       key: scaffoldKey,
@@ -64,130 +61,130 @@ class _ParentRegisterState extends State<ParentRegister> {
         value: SystemUiOverlayStyle.light,
         child: GestureDetector(
             child: Stack(
-              children: <Widget>[
-                Container(
-                  height: double.infinity,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0x665a5fc1),
-                        Color(0x995a68c1),
-                        Color(0xcc5d5ac1),
-                        Color(0xff5a63c1),
-                      ],
-                    ),
-                  ),
-                  child: SingleChildScrollView(
-                    physics: AlwaysScrollableScrollPhysics(),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 25,
-                      vertical: 20,
-                    ),
-                    child: Form(
-                      key: globalFormKey,
-                      child: Column(
-                        children: <Widget>[
-                          FirstCustomTextFormField(
-                            name: 'name',
-                            hintText: 'enter name',
-                            validationError: 'less than 4 characters',
-                            icon: Icons.person,
-                            purpose: 'register',
-                            studentModel: studentModel,
-                          ),
-                          FirstCustomTextFormField(
-                            name: 'second name',
-                            hintText: 'enter second name',
-                            validationError: 'less than 4 characters',
-                            icon: Icons.person,
-                            purpose: 'register',
-                            studentModel: studentModel,
-                          ),
-                          FirstCustomTextFormField(
-                            name: 'father name',
-                            hintText: 'enter father name',
-                            validationError: 'less than 4 charachters',
-                            icon: Icons.person,
-                            purpose: 'register',
-                            studentModel: studentModel,
-                          ),
-                          SizedBox(
-                            height: 20.0,
-                          ),
-                          FirstCustomTextFormField(
-                            name: 'address',
-                            hintText: 'enter address',
-                            validationError: 'less than 4 characters',
-                            icon: Icons.location_on,
-                            purpose: 'register',
-                            studentModel: studentModel,
-                          ),
-                          FirstCustomTextFormField(
-                            name: 'phone number',
-                            hintText: 'enter phone number',
-                            validationError: 'less than 4 characters',
-                            icon: Icons.phone,
-                            purpose: 'register',
-                            studentModel: studentModel,
-                          ),
-
-                          Container(
-                            padding: EdgeInsets.symmetric(vertical: 25),
-                            width: double.infinity,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                if (validateAndSave()) {
-                                  setState(() {
-                                    isApiCallProcess = true;
-                                  });
-                                  StudentApi studentApi = StudentApi();
-                                  studentApi.login(loginModel!).then((value) {
-                                    setState(() {
-                                      isApiCallProcess = false;
-                                    });
-                                    if (value.token!.isNotEmpty) {
-                                      final snackBar = SnackBar(
-                                          content: Text('Login Successful'));
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(snackBar);
-                                      SharedService.setLoginDetails(value);
-                                      Navigator.of(context)
-                                          .pushReplacementNamed('/home');
-                                    } else {
-                                      final snackBar =
-                                      SnackBar(content: Text(' failed to login'));
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(snackBar);
-                                    }
-                                  });
-                                }
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.all(15),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  backgroundColor: Colors.white),
-                              child: Text(
-                                'Create Account',
-                                style: TextStyle(
-                                    color: Color(0x995a68c1),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                          //buildHaveAccount()
-                        ],
+          children: <Widget>[
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0x665a5fc1),
+                    Color(0x995a68c1),
+                    Color(0xcc5d5ac1),
+                    Color(0xff5a63c1),
+                  ],
+                ),
+              ),
+              child: SingleChildScrollView(
+                physics: AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 20,
+                ),
+                child: Form(
+                  key: globalFormKey,
+                  child: Column(
+                    children: <Widget>[
+                      FirstCustomTextFormField(
+                        name: 'name',
+                        hintText: 'enter name',
+                        validationError: 'less than 4 characters',
+                        icon: Icons.person,
+                        purpose: 'register',
+                        studentModel: studentModel,
                       ),
-                    ),
+                      FirstCustomTextFormField(
+                        name: 'second name',
+                        hintText: 'enter second name',
+                        validationError: 'less than 4 characters',
+                        icon: Icons.person,
+                        purpose: 'register',
+                        studentModel: studentModel,
+                      ),
+                      FirstCustomTextFormField(
+                        name: 'father name',
+                        hintText: 'enter father name',
+                        validationError: 'less than 4 charachters',
+                        icon: Icons.person,
+                        purpose: 'register',
+                        studentModel: studentModel,
+                      ),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      FirstCustomTextFormField(
+                        name: 'address',
+                        hintText: 'enter address',
+                        validationError: 'less than 4 characters',
+                        icon: Icons.location_on,
+                        purpose: 'register',
+                        studentModel: studentModel,
+                      ),
+                      FirstCustomTextFormField(
+                        name: 'phone number',
+                        hintText: 'enter phone number',
+                        validationError: 'less than 4 characters',
+                        icon: Icons.phone,
+                        purpose: 'register',
+                        studentModel: studentModel,
+                      ),
+
+                      Container(
+                        padding: EdgeInsets.symmetric(vertical: 25),
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // if (validateAndSave()) {
+                            //   setState(() {
+                            //     isApiCallProcess = true;
+                            //   });
+                            //   StudentApi studentApi = StudentApi();
+                            //   studentApi.login(loginModel!).then((value) {
+                            //     setState(() {
+                            //       isApiCallProcess = false;
+                            //     });
+                            //     if (value.token!.isNotEmpty) {
+                            //       final snackBar = SnackBar(
+                            //           content: Text('Login Successful'));
+                            //       ScaffoldMessenger.of(context)
+                            //           .showSnackBar(snackBar);
+                            //       SharedService.setLoginDetails(value);
+                            //       Navigator.of(context)
+                            //           .pushReplacementNamed('/home');
+                            //     } else {
+                            //       final snackBar =
+                            //       SnackBar(content: Text(' failed to login'));
+                            //       ScaffoldMessenger.of(context)
+                            //           .showSnackBar(snackBar);
+                            //     }
+                            //   });
+                            // }
+                          },
+                          style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.all(15),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              backgroundColor: Colors.white),
+                          child: Text(
+                            'Create Account',
+                            style: TextStyle(
+                                color: Color(0x995a68c1),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      //buildHaveAccount()
+                    ],
                   ),
-                )
-              ],
-            )),
+                ),
+              ),
+            )
+          ],
+        )),
       ),
     );
   }

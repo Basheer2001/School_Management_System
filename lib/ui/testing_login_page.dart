@@ -1,8 +1,9 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/api/login.dart';
+import 'package:project_one/constants/color.dart';
 
 import 'package:project_one/models/login_model.dart';
 import 'package:project_one/providers/admin_provider.dart';
@@ -11,8 +12,11 @@ import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
 import 'package:project_one/ui/owner_screns/main_screen.dart';
+import 'package:project_one/ui/student_screens/main_screen.dart';
+import 'package:project_one/ui/superadmin/main_screen.dart';
 import 'package:project_one/ui/teachers/main_teacher.dart';
 import 'package:provider/provider.dart';
+import 'package:project_one/main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -55,7 +59,7 @@ Widget buildEmail(LoginModel requestModel) {
               contentPadding: EdgeInsets.only(top: 14),
               prefixIcon: Icon(
                 Icons.email,
-                color: Color(0xff5ac18e),
+                color: Color(0xcc5d5ac1),
               ),
               hintText: 'Email',
               hintStyle: TextStyle(color: Colors.black38)),
@@ -102,7 +106,7 @@ Widget buildPassword(LoginModel requestmodel) {
               contentPadding: EdgeInsets.only(top: 14),
               prefixIcon: Icon(
                 Icons.lock,
-                color: Color(0xff5ac18e),
+                color: Color(0xcc5d5ac1),
               ),
               hintText: 'Password',
               hintStyle: TextStyle(color: Colors.black38)),
@@ -179,10 +183,10 @@ class _LoginPageState extends State<LoginPage> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color(0x665ac18e),
-                    Color(0x995ac18e),
-                    Color(0xcc5ac18e),
-                    Color(0xff5ac18e),
+                    Color(0x665a5fc1),
+                    Color(0x995a68c1),
+                    Color(0xcc5d5ac1),
+                    Color(0xff5a63c1),
                   ],
                 ),
               ),
@@ -217,7 +221,7 @@ class _LoginPageState extends State<LoginPage> {
                                 isApiCallProcess = true;
                               });
                               LoginApi loginApi = LoginApi();
-                              loginApi.login(requestModel!).then((value) {
+                              loginApi.login(requestModel!).then((value) async {
                                 setState(() {
                                   isApiCallProcess = false;
                                 });
@@ -225,12 +229,17 @@ class _LoginPageState extends State<LoginPage> {
                                   print(value.token);
                                   final snackBar = SnackBar(
                                       content: Text('Login Successful'));
-                                  //  print(value.token);
+                                  print('first token:${value.token}');
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                   SharedService.setLoginDetails(value);
-                                  SharedService.saveToken(value);
                                   SharedService.saveRole(value);
+                                  // SharedService.saveToken(value);
+                                  // SharedService.saveRole(value);
+                                  token = await SharedService.getToken();
+                                  role = await SharedService.getRole();
+                                  print('first token $token');
+                                  //   print('shared token:$mytoken');
 
                                   if (value.role == 'owner') {
                                     Navigator.push(
@@ -238,6 +247,13 @@ class _LoginPageState extends State<LoginPage> {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               OwnerMainScreen()),
+                                    );
+                                  } else if (value.role == 'superadmin') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SuperAdminMainScreen()),
                                     );
                                   } else if (value.role == 'admin') {
                                     Navigator.push(
@@ -259,6 +275,13 @@ class _LoginPageState extends State<LoginPage> {
                                       MaterialPageRoute(
                                           builder: (context) => ParentScreen()),
                                     );
+                                  } else {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              StudentScreen()),
+                                    );
                                   }
                                 } else {
                                   final snackBar =
@@ -278,13 +301,13 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'Log in',
                             style: TextStyle(
-                                color: Color(0xff5ac18e),
+                                color: kPrimaryColor,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
-                      buildHaveAccount()
+                      // buildHaveAccount()
                     ],
                   ),
                 ),

@@ -53,7 +53,7 @@ Widget appBar(BuildContext context) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Owner Mode',
+              'Super Admin Mode',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ],

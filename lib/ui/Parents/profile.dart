@@ -1,8 +1,11 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, sort_child_properties_last, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:project_one/models/teacher/teacher_model.dart';
 
-class Profile extends StatelessWidget {
+class ParentProfile extends StatelessWidget {
+  TeacherModel teacherModel = TeacherModel();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

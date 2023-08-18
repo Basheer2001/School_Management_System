@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/new_alaa/add_grades.dart';
+import 'package:project_one/ui/teachers/SelectYearForAddGrades.dart';
+import 'package:project_one/ui/teachers/profile.dart';
 
 import '../Parents/profile.dart';
-import '../student_screens/view_schedule.dart';
 
 class TeacherScreen extends StatefulWidget {
   const TeacherScreen({super.key});
@@ -86,7 +86,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Profile()),
+              MaterialPageRoute(builder: (context) => TeacherProfile()),
             );
           },
           child: Container(
@@ -127,7 +127,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => GradesPage()),
+              MaterialPageRoute(builder: (context) => SelectYearForAddGrades()),
             );
           },
           child: Container(
@@ -164,12 +164,7 @@ Widget body(BuildContext context) {
           ),
         ),
         GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ViewSchedule()),
-            );
-          },
+          onTap: () {},
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
