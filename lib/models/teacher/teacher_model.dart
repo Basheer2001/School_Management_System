@@ -8,9 +8,10 @@ class TeacherModel {
   String? subject;
   String? email;
   String? nationalId;
-  int? testSubject;
+  //int testSubject = 4;
   String? password;
   String? keyyy;
+  String? status;
 
 //  List<Subjects>? subjects;
 
@@ -25,9 +26,10 @@ class TeacherModel {
     this.email,
     this.subject,
     this.nationalId,
-    this.testSubject,
+    //this.testSubject,
     this.password,
     this.keyyy,
+    this.status,
 
     // this.subjects,
   });
@@ -47,13 +49,13 @@ class TeacherModel {
       email: json['email'],
       nationalId: json['nationalID'] ?? '',
       password: json['password'] ?? '',
-      keyyy: json['keyyy'] ?? '',
+      //keyyy: json['keyyy'] ?? '',
       // subjects: data,
     );
   }
   factory TeacherModel.fromjsonRegister(Map<String, dynamic> json) {
     return TeacherModel(
-      keyyy: json['keyyy'] ?? '',
+      keyyy: json['message'],
     );
   }
   Map<String, dynamic> tojson() {
@@ -61,10 +63,12 @@ class TeacherModel {
       'f_name': name,
       'l_name': lastName,
       'm_name': middleName,
+      'email': email,
       'password': password,
       'phone': phoneNumber,
       'address': address,
-      'nationalID': nationalId
+      'nationalID': nationalId,
+      //'subject': testSubject,
     };
     return map;
   }

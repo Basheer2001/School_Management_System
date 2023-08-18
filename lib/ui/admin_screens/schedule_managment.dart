@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/color.dart';
-import 'package:project_one/ui/admin_screens/view_sections.dart';
+import 'package:project_one/ui/admin_screens/class_adminstration.dart';
 import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
 
-class SelectYearForStudentsAdministration extends StatelessWidget {
-  const SelectYearForStudentsAdministration({super.key});
+class ScheduleManagment extends StatelessWidget {
+  const ScheduleManagment({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Select Year',
+                'Schedule Management',
                 style: TextStyle(
                     fontSize: 30,
                     color: Colors.black,
@@ -40,7 +40,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => NewViewSections()),
+                          builder: (context) => ClassAdminstration()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -50,7 +50,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
                       ),
                       backgroundColor: kPrimaryColor),
                   child: Text(
-                    '10th year',
+                    'Add Schedule ',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -76,33 +76,7 @@ class SelectYearForStudentsAdministration extends StatelessWidget {
                       ),
                       backgroundColor: kPrimaryColor),
                   child: Text(
-                    '11th year',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(vertical: 30),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => NewViewSections()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.all(15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      backgroundColor: kPrimaryColor),
-                  child: Text(
-                    '12th year',
+                    'View Sections',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

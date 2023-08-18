@@ -95,11 +95,11 @@ class FirstCustomTextFormField extends StatelessWidget {
                   if (name == 'name')
                     studentModel!.name = input!;
                   else if (name == 'second name')
-                    studentModel!.secondName = input.toString();
+                    studentModel!.lastName = input.toString();
                   else if (name == 'father name')
                     studentModel!.fatherName = input!;
                   else if (name == 'phone number')
-                    studentModel!.phoneNumber = input as int;
+                    studentModel!.phoneNumber = input;
                   else
                     studentModel!.address = input!;
                 } else if (name == 'teacher') {

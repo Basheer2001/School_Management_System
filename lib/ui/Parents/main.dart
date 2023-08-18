@@ -1,27 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/Parents/feed_back.dart';
 import 'package:project_one/ui/Parents/profile.dart';
+import 'package:project_one/ui/testing_login_page.dart';
 
 import '../../constants/color.dart';
 import '../student_screens/main_screen.dart';
 
-class ParentScreen extends StatefulWidget {
-  const ParentScreen({Key? key}) : super(key: key);
+class ParentScreen extends StatelessWidget {
+  ParentScreen({Key? key}) : super(key: key);
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-  @override
-  State<ParentScreen> createState() => _ParentScreenState();
-}
-
-class _ParentScreenState extends State<ParentScreen> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
+        key: scaffoldKey,
+        drawer: Drawer(
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(
+                  '',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+                accountEmail: Text(
+                  '',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  'Log Out',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                leading: Icon(
+                  Icons.exit_to_app_outlined,
+                ),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                  SharedService.logout();
+                },
+              ),
+            ],
+          ),
+        ),
         body: Column(
           children: [
-            appBar(context),
+            appBar(context, scaffoldKey),
             body(context),
           ],
         ),
@@ -31,7 +62,7 @@ class _ParentScreenState extends State<ParentScreen> {
 }
 
 @override
-Widget appBar(BuildContext context) {
+Widget appBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
   return Container(
     padding: EdgeInsets.only(top: 50, left: 20, right: 20),
     height: 150,
@@ -59,6 +90,22 @@ Widget appBar(BuildContext context) {
             Text(
               'Parent Mode',
               style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: kPrimaryLight,
+              ),
+              child: IconButton(
+                  onPressed: () {
+                    scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: Icon(
+                    Icons.menu,
+                    color: Colors.white,
+                  )),
             ),
           ],
         )

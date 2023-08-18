@@ -5,9 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:project_one/main.dart';
 
 import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
+import 'package:project_one/ui/admin_screens/schedule_managment.dart';
 
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
+import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
+import 'package:project_one/ui/admin_screens/view_sections_for_students.dart';
 
 import 'admin_screens/class_adminstration.dart';
 import 'admin_screens/student_admenstration0.dart';
@@ -92,7 +95,8 @@ Widget body(BuildContext context) {
             //  print(token);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => StudentAdminstration0()),
+              MaterialPageRoute(
+                  builder: (context) => ViewSectionsForStudents()),
             );
           },
           child: Container(
@@ -119,7 +123,7 @@ Widget body(BuildContext context) {
                   ),
                 ),
                 Text(
-                  'Students Administration',
+                  'View Students',
                   style: Theme.of(context).textTheme.bodyLarge,
                 )
               ],
@@ -238,8 +242,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => ClassAdminstration()),
+              MaterialPageRoute(builder: (context) => ScheduleManagment()),
             );
           },
           child: Container(
@@ -260,13 +263,13 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/undraw_Building_re_xfcm (2).png',
+                    'images/schedule.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
                 ),
                 Text(
-                  'Classes Administration',
+                  'Schedule Manegment',
                   style: Theme.of(context).textTheme.bodyLarge,
                 )
               ],
