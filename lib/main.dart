@@ -34,7 +34,8 @@ main() async {
 
   bool isLoggedIn = await SharedService.isLoggedIn();
   if (isLoggedIn) {
-    // await SharedService.getRole();
+    // token = await SharedService.getToken();
+    // role = await SharedService.getRole();
     // يلي عليهن تعليقات بدهن تجريب مالي مجربهن
 
     // if(role=='owner'){
@@ -113,7 +114,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       home:
-          LoginPage(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
+          OwnerMainScreen(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
 
       routes: <String, WidgetBuilder>{
         '/home': (context) => HomePage(),

@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/category.dart';
+import 'package:project_one/constants/color.dart';
 import 'package:project_one/constants/size.dart';
+import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/admin+owner_screens/add_students.dart';
 
 import 'package:project_one/ui/admin_screens/select_year_for_class_administration.dart';
@@ -11,25 +13,55 @@ import 'package:project_one/ui/admin_screens/select_year_for_students_administra
 
 import 'package:project_one/ui/student_screens/profile.dart';
 import 'package:project_one/ui/student_screens/show_grades.dart';
+import 'package:project_one/ui/testing_login_page.dart';
 
 import 'attendance.dart';
 
-class StudentScreen extends StatefulWidget {
-  const StudentScreen({super.key});
+class StudentScreen extends StatelessWidget {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  StudentScreen({super.key});
 
-  @override
-  State<StudentScreen> createState() => _StudentScreenState();
-}
-
-class _StudentScreenState extends State<StudentScreen> {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
+        key: scaffoldKey,
+        drawer: Drawer(
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: Text(
+                  '',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+                accountEmail: Text(
+                  '',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+              ),
+              ListTile(
+                title: Text(
+                  'Log Out',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                leading: Icon(
+                  Icons.exit_to_app_outlined,
+                ),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                  SharedService.logout();
+                },
+              ),
+            ],
+          ),
+        ),
         body: Column(
           children: [
-            appBar(context),
+            appBar(context, scaffoldKey),
             body(context),
           ],
         ),
@@ -39,7 +71,7 @@ class _StudentScreenState extends State<StudentScreen> {
 }
 
 @override
-Widget appBar(BuildContext context) {
+Widget appBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
   return Container(
     padding: EdgeInsets.only(top: 50, left: 19, right: 20),
     height: 150,
@@ -67,6 +99,22 @@ Widget appBar(BuildContext context) {
             Text(
               'Student Mode',
               style: Theme.of(context).textTheme.titleLarge,
+            ),
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: kPrimaryLight,
+              ),
+              child: IconButton(
+                  onPressed: () {
+                    scaffoldKey.currentState?.openDrawer();
+                  },
+                  icon: Icon(
+                    Icons.menu,
+                    color: Colors.white,
+                  )),
             ),
           ],
         )
@@ -135,7 +183,8 @@ Widget body(BuildContext context) {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Result()),
-            );},
+            );
+          },
           child: Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(

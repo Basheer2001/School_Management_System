@@ -26,7 +26,7 @@ class OwnerMainScreen extends StatelessWidget {
             children: [
               UserAccountsDrawerHeader(
                 accountName: Text(
-                  'abd',
+                  '',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
                 accountEmail: Text(
@@ -43,7 +43,7 @@ class OwnerMainScreen extends StatelessWidget {
                   Icons.exit_to_app_outlined,
                 ),
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(builder: (context) => LoginPage()),
                   );

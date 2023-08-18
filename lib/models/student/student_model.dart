@@ -16,10 +16,10 @@ class StudentModel {
     this.marks,
   });
   factory StudentModel.fromjson(Map<String, dynamic> json) {
-    List<MarksModel> data = [];
-    data = json['marks']
-        .map<MarksModel>((json) => MarksModel.fromjson(json))
-        .toList();
+    // List<MarksModel> data = [];
+    // data = json['marks']
+    //     .map<MarksModel>((json) => MarksModel.fromjson(json))
+    //     .toList();
     return StudentModel(
       // should be same as back end
       id: json['id'] ?? 0,
@@ -28,7 +28,7 @@ class StudentModel {
       fatherName: json['m_name'] ?? '',
       address: json['address'] ?? '',
       phoneNumber: json['phone'] ?? '',
-      marks: data,
+      // marks: data,
     );
   }
 }
