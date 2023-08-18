@@ -248,7 +248,7 @@ class _LoginPageState extends State<LoginPage> {
                                           builder: (context) =>
                                               OwnerMainScreen()),
                                     );
-                                  } else if (value.role == 'superadmin') {
+                                  } else if (value.role == 'super_admin') {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(

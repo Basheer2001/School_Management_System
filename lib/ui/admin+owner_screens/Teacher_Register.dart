@@ -387,51 +387,51 @@ Widget buildNationalId(TeacherModel requestModel) {
   );
 }
 
-Widget buildTestSubject(TeacherModel requestModel) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      const Text(
-        'test subject',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      const SizedBox(height: 10),
-      Container(
-        height: 60,
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
+// Widget buildTestSubject(TeacherModel requestModel) {
+//   return Column(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: <Widget>[
+//       const Text(
+//         'test subject',
+//         style: TextStyle(
+//           color: Colors.white,
+//           fontSize: 16,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//       const SizedBox(height: 10),
+//       Container(
+//         height: 60,
+//         alignment: Alignment.centerLeft,
+//         decoration: BoxDecoration(
+//             color: Colors.white,
+//             borderRadius: BorderRadius.circular(10),
 
-            // ignore: prefer_const_literals_to_create_immutables
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black26, blurRadius: 6, offset: Offset(0, 2)),
-            ]),
-        child: TextFormField(
-          onSaved: (input) => requestModel.testSubject = input as int,
-          keyboardType: TextInputType.number,
-          style: TextStyle(color: Colors.black87),
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(top: 14),
-              prefixIcon: Icon(
-                Icons.person,
-                color: Color(0xcc5d5ac1),
-              ),
-              hintText: 'test subject',
-              hintStyle: TextStyle(color: Colors.black38)),
-          validator: (value) =>
-              value!.length < 1 ? ' should be 3 or more charachtars' : null,
-        ),
-      )
-    ],
-  );
-}
+//             // ignore: prefer_const_literals_to_create_immutables
+//             boxShadow: [
+//               BoxShadow(
+//                   color: Colors.black26, blurRadius: 6, offset: Offset(0, 2)),
+//             ]),
+//         child: TextFormField(
+//           onSaved: (input) => requestModel.testSubject = input as int,
+//           keyboardType: TextInputType.number,
+//           style: TextStyle(color: Colors.black87),
+//           decoration: InputDecoration(
+//               border: InputBorder.none,
+//               contentPadding: EdgeInsets.only(top: 14),
+//               prefixIcon: Icon(
+//                 Icons.person,
+//                 color: Color(0xcc5d5ac1),
+//               ),
+//               hintText: 'test subject',
+//               hintStyle: TextStyle(color: Colors.black38)),
+//           validator: (value) =>
+//               value!.length < 1 ? ' should be 3 or more charachtars' : null,
+//         ),
+//       )
+//     ],
+//   );
+// }
 
 class _TeacherRegisterState extends State<TeacherRegister> {
   String year = 'Select year';
@@ -556,17 +556,21 @@ class _TeacherRegisterState extends State<TeacherRegister> {
                                 setState(() {
                                   isApiCallProcess = false;
                                 });
+                                print(value.status);
                                 if (value.keyyy!.isNotEmpty) {
-                                  final snackBar = SnackBar(
-                                      content: Text('Login Successful'));
+                                  print(value.keyyy);
+
+                                  print(value.status);
+                                  final snackBar =
+                                      SnackBar(content: Text('add complete'));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
 
-                                  Navigator.of(context)
-                                      .pushReplacementNamed('/home');
+                                  // Navigator.of(context)
+                                  //     .pushReplacementNamed('/home');
                                 } else {
-                                  final snackBar = SnackBar(
-                                      content: Text(' failed to login'));
+                                  final snackBar =
+                                      SnackBar(content: Text(' add faild'));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
                                 }

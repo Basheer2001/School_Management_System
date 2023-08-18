@@ -84,8 +84,13 @@ class TeacherApi {
 
   Future<TeacherModel> teacherRegister(TeacherModel teacherModel) async {
     try {
-      var url = Uri.parse('http://192.168.43.47:8000/api/login');
-      final response = await http.post(url, body: teacherModel.tojson());
+      var url = Uri.parse('http://192.168.43.47:8000/api/store-teacher');
+      final response = await http.post(url,
+          headers: {
+            'Authorization': 'Bearer $token',
+            'Content-Type': 'application/json',
+          },
+          body: jsonEncode(teacherModel.tojson()));
       if (response.statusCode == 200) {
         return TeacherModel.fromjsonRegister(jsonDecode(response.body));
       } else {

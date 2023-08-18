@@ -1,18 +1,18 @@
 class StudentModel {
-  int id;
-  String name;
-  String secondName;
-  String fatherName;
-  int phoneNumber;
-  String address;
+  int? id;
+  String? name;
+  String? lastName;
+  String? fatherName;
+  String? phoneNumber;
+  String? address;
   List<MarksModel>? marks;
   StudentModel({
-    required this.id,
-    required this.name,
-    required this.secondName,
-    required this.fatherName,
-    required this.address,
-    required this.phoneNumber,
+    this.id,
+    this.name,
+    this.lastName,
+    this.fatherName,
+    this.address,
+    this.phoneNumber,
     this.marks,
   });
   factory StudentModel.fromjson(Map<String, dynamic> json) {
@@ -23,11 +23,11 @@ class StudentModel {
     return StudentModel(
       // should be same as back end
       id: json['id'] ?? 0,
-      name: json['name'] ?? '',
-      secondName: json['secondName'] ?? '',
-      fatherName: json['fatherName'] ?? '',
+      name: json['f_name'] ?? '',
+      lastName: json['l_name'] ?? '',
+      fatherName: json['m_name'] ?? '',
       address: json['address'] ?? '',
-      phoneNumber: json['phoneNumber'] ?? 0,
+      phoneNumber: json['phone'] ?? '',
       marks: data,
     );
   }

@@ -9,6 +9,7 @@ import 'package:project_one/ui/admin_screens/select_year_for_students_administra
 import 'package:project_one/ui/admin_screens/student_admenstration0.dart';
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/ui/testing_login_page.dart';
 
 class OwnerMainScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -42,7 +43,10 @@ class OwnerMainScreen extends StatelessWidget {
                   Icons.exit_to_app_outlined,
                 ),
                 onTap: () {
-                  // Navigator.pushReplacement(context,build())
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
                   SharedService.logout();
                 },
               ),

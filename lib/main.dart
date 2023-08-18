@@ -9,7 +9,9 @@ import 'package:project_one/providers/teacher_provider.dart';
 import 'package:project_one/ui/Parents/main.dart';
 import 'package:project_one/ui/admin_screens/main_screen.dart';
 import 'package:project_one/ui/owner_screns/main_screen.dart';
+
 import 'package:project_one/ui/student_screens/main_screen.dart';
+import 'package:project_one/ui/student_screens/week%20program.dart';
 import 'package:project_one/ui/superadmin/main_screen.dart';
 import 'package:project_one/ui/teachers/main_teacher.dart';
 
@@ -32,6 +34,7 @@ main() async {
 
   bool isLoggedIn = await SharedService.isLoggedIn();
   if (isLoggedIn) {
+    // await SharedService.getRole();
     // يلي عليهن تعليقات بدهن تجريب مالي مجربهن
 
     // if(role=='owner'){
@@ -110,7 +113,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       home:
-          Move(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
+          LoginPage(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
 
       routes: <String, WidgetBuilder>{
         '/home': (context) => HomePage(),
