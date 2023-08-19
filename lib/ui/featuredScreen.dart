@@ -180,44 +180,44 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ViewTeachers()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/teachr.png',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Teachers Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                )
-              ],
-            ),
-          ),
-        ),
+        // GestureDetector(
+        //   onTap: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => ViewTeachers()),
+        //     );
+        //   },
+        //   child: Container(
+        //     padding: EdgeInsets.all(10),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(20),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: Colors.black.withOpacity(0.1),
+        //             blurRadius: 4.0,
+        //             spreadRadius: 0.05),
+        //       ],
+        //     ),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Align(
+        //           alignment: Alignment.center,
+        //           child: Image.asset(
+        //             'images/teachr.png',
+        //             height: 120,
+        //             fit: BoxFit.contain,
+        //           ),
+        //         ),
+        //         Text(
+        //           'Teachers Administration',
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // ),
         GestureDetector(
           onTap: () {
             Navigator.push(
@@ -255,39 +255,7 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/admin.png',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Admins Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ],
-            ),
-          ),
-        ),
+
         GestureDetector(
           onTap: () {
             Navigator.push(

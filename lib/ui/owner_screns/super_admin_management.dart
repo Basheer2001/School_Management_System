@@ -3,16 +3,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/color.dart';
+import 'package:project_one/providers/teacher_provider.dart';
 import 'package:project_one/ui/admin+owner_screens/super_admin_register.dart';
 import 'package:project_one/ui/admin_screens/view_sections.dart';
 import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
 import 'package:project_one/ui/owner_screns/view_super_admin.dart';
+import 'package:provider/provider.dart';
 
 class SuperAdminManagment extends StatelessWidget {
   SuperAdminManagment({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TeachersProvider>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -39,6 +42,7 @@ class SuperAdminManagment extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: ElevatedButton(
                   onPressed: () {
+                    provider.refreshState();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -52,7 +56,7 @@ class SuperAdminManagment extends StatelessWidget {
                       ),
                       backgroundColor: kPrimaryColor),
                   child: Text(
-                    'View Admins',
+                    'View Super Admins',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -65,6 +69,7 @@ class SuperAdminManagment extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: ElevatedButton(
                   onPressed: () {
+                    provider.refreshState();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -78,7 +83,7 @@ class SuperAdminManagment extends StatelessWidget {
                       ),
                       backgroundColor: kPrimaryColor),
                   child: Text(
-                    'Add Admins',
+                    'Add  Super Admins',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

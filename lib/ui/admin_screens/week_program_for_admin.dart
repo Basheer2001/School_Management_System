@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:project_one/api/admin_api.dart';
+import 'package:project_one/models/week_program_model.dart';
 import 'package:project_one/providers/admin_provider.dart';
 import 'package:project_one/widgets/custom_bar_button.dart';
 import 'package:provider/provider.dart';
@@ -34,6 +35,7 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
     final provider = Provider.of<AdminProivder>(context);
     String day = 'sunday';
     bool isSelected = false;
+    ViewWeekProgram viewWeekProgram = ViewWeekProgram();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -127,34 +129,38 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
             child: TabBarView(
               controller: _tabController,
               children: [
-                ListView(
-                  children: isSelected
-                      ? [
-                          CardWidget(
-                              period: 'Period 1',
-                              subject: 'Geometry',
-                              teacher: 'Ahmad',
-                              time: '8:00 - 9:00'),
-                          CardWidget(
-                              period: 'Period 2',
-                              subject: 'Physics',
-                              teacher: 'Basheer',
-                              time: '9:00 - 10:00'),
-                          CardWidget(
-                              period: 'Period 3',
-                              subject: 'Math',
-                              teacher: 'Bassam',
-                              time: '10:00 - 11:00'),
-                          CardWidget(
-                              period: 'Period 4',
-                              subject: 'Science',
-                              teacher: 'Abd',
-                              time: '11:00 - 12:00'),
-                        ]
-                      : [
-                          Container()
-                        ], // This will show the Container when isSelected is false or not true.
+                ListView.builder(
+                  itemCount: 4,
+                  itemBuilder: ((context, i) {
+                    return Card();
+                    //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
+                  }),
                 ),
+
+                // children:
+                //      [
+                //         CardWidget(
+                //             period: 'Period 1',
+                //             subject: 'Geometry',
+                //             teacher: 'Ahmad',
+                //             time: '8:00 - 9:00'),
+                //         CardWidget(
+                //             period: 'Period 2',
+                //             subject: 'Physics',
+                //             teacher: 'Basheer',
+                //             time: '9:00 - 10:00'),
+                //         CardWidget(
+                //             period: 'Period 3',
+                //             subject: 'Math',
+                //             teacher: 'Bassam',
+                //             time: '10:00 - 11:00'),
+                //         CardWidget(
+                //             period: 'Period 4',
+                //             subject: 'Science',
+                //             teacher: 'Abd',
+                //             time: '11:00 - 12:00'),
+                //       ]
+
                 ListView(
                   children: [
                     CardWidget(
