@@ -196,7 +196,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/teachers.png',
+                    'images/teachr.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),

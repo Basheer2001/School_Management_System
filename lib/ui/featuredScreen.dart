@@ -13,6 +13,7 @@ import 'package:project_one/ui/admin_screens/select_year_for_students_administra
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
 import 'package:project_one/ui/admin_screens/view_sections_for_students.dart';
+import 'package:project_one/ui/admin_screens/view_teachers.dart';
 import 'package:project_one/ui/testing_login_page.dart';
 
 import 'admin_screens/class_adminstration.dart';
@@ -183,7 +184,7 @@ Widget body(BuildContext context) {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => TeachersAdminstration()),
+              MaterialPageRoute(builder: (context) => ViewTeachers()),
             );
           },
           child: Container(
