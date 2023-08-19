@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Addprogram extends StatefulWidget {
-  const Addprogram({Key? key}) : super(key: key);
+class Addprogramn extends StatefulWidget {
+  const Addprogramn({Key? key}) : super(key: key);
 
   @override
-  _AddprogramState createState() => _AddprogramState();
+  _AddprogramnState createState() => _AddprogramnState();
 }
 
 
-class _AddprogramState extends State<Addprogram> {
+class _AddprogramnState extends State<Addprogramn> {
   List<String> days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'];
   List<List<String>> schedule = List.generate(
     5,
@@ -19,7 +19,13 @@ class _AddprogramState extends State<Addprogram> {
   List<String> teachers = [ 'alaa', 'basheer', 'bassam', 'abd', 'jana'
   ];
 
+  List<String> subjects = [ 'math', 'science', 'physical', 'english', 'history'
+  ];
+
   List<String?> selectedTeachers = List.generate(5 * 6, (_) => null);
+
+  List<String?> selectedSubjects = List.generate(5 * 6, (_) => null);
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,23 +63,28 @@ class _AddprogramState extends State<Addprogram> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Expanded(
-                                  child: TextField(
-                                    cursorColor: Colors.purple,
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      enabledBorder: const OutlineInputBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        borderSide: BorderSide(
-                                            width: 2, color: Colors.purple),
-                                      ),
-                                      hintText: 'period ${period + 1}',
-                                    ),
-                                    onChanged: (value) =>
-                                    schedule[dayIndex][period] = value,
+                                  child: DropdownButton<String>(
+                                    value: selectedSubjects[dayIndex * 6 +
+                                        period],
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        selectedSubjects[dayIndex * 6 +
+                                            period] = newValue;
+                                      });
+                                    },
+                                    items: subjects.map<
+                                        DropdownMenuItem<String>>(
+                                          (String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value),
+                                        );
+                                      },
+                                    ).toList(),
+                                    hint: Text('choose subject'),
                                   ),
                                 ),
-                                const SizedBox(width: 10),
+                                SizedBox(width: 10),
                                 DropdownButton<String>(
                                   value: selectedTeachers[dayIndex * 6 +
                                       period],
