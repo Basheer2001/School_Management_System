@@ -362,7 +362,7 @@ class ViewEvents extends StatelessWidget {
 
                     },
                     title: Text(
-                        'ghjk'
+                        'New teacher joied the staff'
                     ),
 
                     //subtitle: Text(myteacher.lastName),
@@ -377,7 +377,7 @@ class ViewEvents extends StatelessWidget {
 
                     },
                     title: Text(
-                        'ghjk'
+                        'News : a New quiz is coming '
                     ),
 
                     //subtitle: Text(myteacher.lastName),
@@ -386,36 +386,7 @@ class ViewEvents extends StatelessWidget {
                     ),
                   ),
                 ),
-                Card(
-                  child: ListTile(
-                    onTap: () {
 
-                    },
-                    title: Text(
-                        'ghjk'
-                    ),
-
-                    //subtitle: Text(myteacher.lastName),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    onTap: () {
-
-                    },
-                    title: Text(
-                        'ghjk'
-                    ),
-
-                    //subtitle: Text(myteacher.lastName),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                ),
               ]
           ),
         ));

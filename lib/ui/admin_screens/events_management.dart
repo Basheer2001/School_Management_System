@@ -40,10 +40,10 @@ class EventsManagement extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => ViewTeachers()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ViewEvents()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.all(15),
@@ -166,3 +166,55 @@ class _AddEventState extends State<AddEvent> {
     );
   }
 }
+class ViewEvents extends StatelessWidget {
+  ViewEvents({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('View Events'),
+          actions: [],
+        ),
+        body: Container(
+          color: Colors.grey[200],
+          padding: EdgeInsets.all(10),
+          child: ListView(
+              children: [
+
+                Card(
+                  child: ListTile(
+                    onTap: () {
+
+                    },
+                    title: Text(
+                        'New teacher joied the staff'
+                    ),
+
+                    //subtitle: Text(myteacher.lastName),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    onTap: () {
+
+                    },
+                    title: Text(
+                        'News : a New quiz is coming '
+                    ),
+
+                    //subtitle: Text(myteacher.lastName),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+
+              ]
+          ),
+        ));
+  }
+}
+
