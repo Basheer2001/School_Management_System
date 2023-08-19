@@ -51,11 +51,11 @@ class ViewStudentsBySectionId extends StatelessWidget {
                     int id = myStudent.id;
                     print(id);
                     provider.getStudentId(id);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) => ViewStudentProfileById()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ViewStudentProfileById()),
+                    );
                   },
                   title: RichText(
                     text: TextSpan(children: [

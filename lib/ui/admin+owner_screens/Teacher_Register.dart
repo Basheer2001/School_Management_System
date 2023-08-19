@@ -448,7 +448,6 @@ class _TeacherRegisterState extends State<TeacherRegister> {
   }
 
   TeacherModel? teacherModel;
-  StudentModel? studentModel;
 
   @override
   void initState() {

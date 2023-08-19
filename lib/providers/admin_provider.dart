@@ -1,9 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:project_one/api/admin_api.dart';
+import 'package:project_one/api/super_admin_api.dart';
 import 'package:project_one/models/admin/admin_model.dart';
 import 'package:project_one/models/section_model.dart';
 import 'package:project_one/models/student/student_model.dart';
 import 'package:project_one/models/student/view_students_model.dart';
+import 'package:project_one/models/superadmin/view_super_admin_model.dart';
+import 'package:project_one/models/week_program_model.dart';
 
 enum ListScreenState { inital, loading, loaded }
 
@@ -12,6 +15,9 @@ class AdminProivder extends ChangeNotifier {
   SectionModle sectionModle = SectionModle();
   ViewStudentsModel viewStudentsModel = ViewStudentsModel();
   StudentModel studentModel = StudentModel();
+  ViewSuperAdminModel viewSuperAdminModel = ViewSuperAdminModel();
+
+  ViewWeekProgram viewWeekProgram = ViewWeekProgram();
   int id = 0;
   String dayName = 'sunday';
   int studentId = 0;
@@ -51,5 +57,15 @@ class AdminProivder extends ChangeNotifier {
   getDayName(String value) {
     dayName = value;
     notifyListeners();
+  }
+
+  getSuperAdmins() async {
+    viewSuperAdminModel = await SuperAdminApi().fetchSuperAdmins();
+    state = ListScreenState.loaded;
+    notifyListeners();
+  }
+
+  fetchWeekProgram() async {
+    viewWeekProgram = await AdminApi().viewWeekProgramByID(id);
   }
 }

@@ -8,19 +8,20 @@ import 'package:project_one/api/teacher_api.dart';
 import 'package:project_one/constants/color.dart';
 import 'package:project_one/models/login_model.dart';
 import 'package:project_one/models/student/student_model.dart';
+import 'package:project_one/models/superadmin/superadmin.dart';
 import 'package:project_one/models/teacher/teacher_model.dart';
 import 'package:project_one/services/progress_hud.dart';
 import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/widgets/textformfield.dart';
 
-class StudentRegister extends StatefulWidget {
-  const StudentRegister({super.key});
+class SuperAdminRegister extends StatefulWidget {
+  const SuperAdminRegister({super.key});
 
   @override
-  State<StudentRegister> createState() => _StudentRegisterState();
+  State<SuperAdminRegister> createState() => _SuperAdminRegisterState();
 }
 
-Widget buildName(StudentModel requestModel) {
+Widget buildName(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -66,7 +67,7 @@ Widget buildName(StudentModel requestModel) {
   );
 }
 
-Widget buildLastName(StudentModel requestModel) {
+Widget buildLastName(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -112,7 +113,7 @@ Widget buildLastName(StudentModel requestModel) {
   );
 }
 
-Widget buildFatherName(StudentModel requestModel) {
+Widget buildFatherName(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -158,7 +159,7 @@ Widget buildFatherName(StudentModel requestModel) {
   );
 }
 
-Widget buildEmail(StudentModel requestModel) {
+Widget buildEmail(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -204,7 +205,7 @@ Widget buildEmail(StudentModel requestModel) {
   );
 }
 
-Widget buildAddress(StudentModel requestModel) {
+Widget buildAddress(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -250,7 +251,7 @@ Widget buildAddress(StudentModel requestModel) {
   );
 }
 
-Widget buildPassword(StudentModel requestModel) {
+Widget buildPassword(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -296,7 +297,7 @@ Widget buildPassword(StudentModel requestModel) {
   );
 }
 
-Widget buildPhoneNumber(StudentModel requestModel) {
+Widget buildPhoneNumber(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -342,7 +343,7 @@ Widget buildPhoneNumber(StudentModel requestModel) {
   );
 }
 
-Widget buildNationalId(StudentModel requestModel) {
+Widget buildNationalId(SuperAdminModel requestModel) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
@@ -434,7 +435,7 @@ Widget buildNationalId(StudentModel requestModel) {
 //   );
 // }
 
-class _StudentRegisterState extends State<StudentRegister> {
+class _SuperAdminRegisterState extends State<SuperAdminRegister> {
   String year = 'Select year';
   final scaffoldKey = GlobalKey<ScaffoldState>();
   GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
@@ -448,12 +449,12 @@ class _StudentRegisterState extends State<StudentRegister> {
     return false;
   }
 
-  StudentModel? studentModel;
+  SuperAdminModel? superAdminModel;
 
   @override
   void initState() {
     super.initState();
-    studentModel = StudentModel();
+    superAdminModel = SuperAdminModel();
     //loginModel = LoginModel();
   }
 
@@ -506,35 +507,35 @@ class _StudentRegisterState extends State<StudentRegister> {
                   key: globalFormKey,
                   child: Column(
                     children: <Widget>[
-                      buildName(studentModel!),
+                      buildName(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildLastName(studentModel!),
+                      buildLastName(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildFatherName(studentModel!),
+                      buildFatherName(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildAddress(studentModel!),
+                      buildAddress(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildEmail(studentModel!),
+                      buildEmail(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildPassword(studentModel!),
+                      buildPassword(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildPhoneNumber(studentModel!),
+                      buildPhoneNumber(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
-                      buildNationalId(studentModel!),
+                      buildNationalId(superAdminModel!),
                       SizedBox(
                         height: 20,
                       ),
@@ -551,15 +552,16 @@ class _StudentRegisterState extends State<StudentRegister> {
                               });
                               SuperAdminApi superAdminApi = SuperAdminApi();
                               superAdminApi
-                                  .teacherRegister(studentModel!)
+                                  .superAdminRegister(superAdminModel!)
                                   .then((value) {
                                 setState(() {
                                   isApiCallProcess = false;
                                 });
-
+                                print(value.status);
                                 if (value.keyyy!.isNotEmpty) {
                                   print(value.keyyy);
 
+                                  print(value.status);
                                   final snackBar =
                                       SnackBar(content: Text('add complete'));
                                   ScaffoldMessenger.of(context)

@@ -318,4 +318,13 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+  // bool validateAndSave() {
+
+  //   final form = globalFormKey.currentState;
+  //   if (form!.validate()) {
+  //     form.save();
+  //     return true;
+  //   }
+  //   return false;
+  // }
 }

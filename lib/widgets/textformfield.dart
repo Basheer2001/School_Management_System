@@ -97,7 +97,7 @@ class FirstCustomTextFormField extends StatelessWidget {
                   else if (name == 'second name')
                     studentModel!.lastName = input.toString();
                   else if (name == 'father name')
-                    studentModel!.fatherName = input!;
+                    studentModel!.middleName = input!;
                   else if (name == 'phone number')
                     studentModel!.phoneNumber = input;
                   else

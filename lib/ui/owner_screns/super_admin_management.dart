@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_one/constants/color.dart';
-import 'package:project_one/ui/admin_screens/class_adminstration.dart';
+import 'package:project_one/ui/admin+owner_screens/super_admin_register.dart';
+import 'package:project_one/ui/admin_screens/view_sections.dart';
 import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
+import 'package:project_one/ui/owner_screns/view_super_admin.dart';
 
-class ScheduleManagment extends StatelessWidget {
-  const ScheduleManagment({super.key});
+class SelectYearForClassAdministration extends StatelessWidget {
+  const SelectYearForClassAdministration({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class ScheduleManagment extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Schedule Management',
+                'SuperAdmin Managment',
                 style: TextStyle(
                     fontSize: 30,
                     color: Colors.black,
@@ -37,12 +39,11 @@ class ScheduleManagment extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) => ClassAdminstration()
-                    //       ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ViewSuperAdmins()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.all(15),
@@ -51,7 +52,7 @@ class ScheduleManagment extends StatelessWidget {
                       ),
                       backgroundColor: kPrimaryColor),
                   child: Text(
-                    'Add Schedule ',
+                    'View Admins',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -67,7 +68,7 @@ class ScheduleManagment extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => NewViewSections()),
+                          builder: (context) => SuperAdminRegister()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -77,7 +78,7 @@ class ScheduleManagment extends StatelessWidget {
                       ),
                       backgroundColor: kPrimaryColor),
                   child: Text(
-                    'View Sections',
+                    'Add Admins',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,

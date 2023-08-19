@@ -95,7 +95,7 @@ class ViewStudentProfileById extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       TextSpan(
-                        text: studentModel.fatherName,
+                        text: studentModel.middleName,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ]),
