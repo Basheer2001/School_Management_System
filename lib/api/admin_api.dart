@@ -73,7 +73,8 @@ class AdminApi {
   Future<ViewWeekProgram> viewWeekProgramByID(int id) async {
     try {
       // انتبه على الرابط
-      var url = Uri.parse('');
+      var url = Uri.parse(
+          'http://192.168.43.47:8000/api/view-schedule-by-section-id?section_id=$id');
 
       var response = await http.get(
         url,

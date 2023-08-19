@@ -36,6 +36,19 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
     String day = 'sunday';
     bool isSelected = false;
     ViewWeekProgram viewWeekProgram = ViewWeekProgram();
+    if (provider.state == ListScreenState.inital) {
+      print('if');
+      provider.fetchWeekProgram();
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    } else {
+      print('else');
+      viewWeekProgram = provider.viewWeekProgram;
+      //provider.refreshState();
+    }
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -130,9 +143,14 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
               controller: _tabController,
               children: [
                 ListView.builder(
-                  itemCount: 4,
+                  itemCount: 6,
                   itemBuilder: ((context, i) {
-                    return Card();
+                    Day myDays = viewWeekProgram.day![i];
+                    return CardWidget(
+                        period: 'Period 1',
+                        subject: myDays.subjectName,
+                        teacher: myDays.teacherName,
+                        time: '9:00 -10:00');
                     //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
                   }),
                 ),
