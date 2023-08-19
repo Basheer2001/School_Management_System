@@ -153,43 +153,7 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ParentAdminstration()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/parent.png',
-                    height: 120,
-                  ),
-                ),
-                Text(
-                  'Parents Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ],
-            ),
-          ),
-        ),
+
         GestureDetector(
           onTap: () {},
           child: Container(
@@ -210,7 +174,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/admin.jpg',
+                    'images/admin.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),

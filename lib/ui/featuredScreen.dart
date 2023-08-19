@@ -16,6 +16,7 @@ import 'package:project_one/ui/admin_screens/view_sections_for_students.dart';
 import 'package:project_one/ui/admin_screens/view_teachers.dart';
 import 'package:project_one/ui/testing_login_page.dart';
 
+import '../Attendance/check_attendance/st_list.dart';
 import 'admin_screens/class_adminstration.dart';
 import 'admin_screens/events_management.dart';
 import 'admin_screens/student_admenstration0.dart';
@@ -218,43 +219,7 @@ Widget body(BuildContext context) {
         //     ),
         //   ),
         // ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ParentAdminstration()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/parent.png',
-                    height: 120,
-                  ),
-                ),
-                Text(
-                  'Parents Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ],
-            ),
-          ),
-        ),
+
 
         GestureDetector(
           onTap: () {
@@ -332,6 +297,47 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => StudentsList()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/attendance.png',
+                    height: 120,
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Attendance',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
       ],
     ),
   );
