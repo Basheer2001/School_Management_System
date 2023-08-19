@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/alaa/new_addprogram.dart';
 import 'package:project_one/constants/color.dart';
 import 'package:project_one/ui/admin_screens/class_adminstration.dart';
 import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
@@ -37,12 +38,12 @@ class ScheduleManagment extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: ElevatedButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) => ClassAdminstration()
-                    //       ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Addprogramn()
+                          ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.all(15),
