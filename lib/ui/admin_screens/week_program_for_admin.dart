@@ -72,8 +72,7 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                         isSelected: _tabController.index == 0,
                         onTap: () {
                           day = 'sunday';
-                          provider.getDayName(day);
-                          provider.refreshState();
+
                           setState(() {
                             _tabController.animateTo(0);
                           });
@@ -86,8 +85,7 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                         isSelected: _tabController.index == 1,
                         onTap: () {
                           day = 'monday';
-                          provider.refreshState();
-                          provider.getDayName(day);
+
                           setState(() {
                             _tabController.animateTo(1);
                           });
@@ -99,8 +97,7 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                         isSelected: _tabController.index == 2,
                         onTap: () {
                           day = 'tuesday';
-                          provider.refreshState();
-                          provider.getDayName(day);
+
                           setState(() {
                             _tabController.animateTo(2);
                           });
@@ -112,8 +109,7 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                         isSelected: _tabController.index == 3,
                         onTap: () {
                           day = 'wednesday';
-                          provider.refreshState();
-                          provider.getDayName(day);
+
                           setState(() {
                             _tabController.animateTo(3);
                           });
@@ -125,8 +121,7 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                         isSelected: _tabController.index == 4,
                         onTap: () {
                           day = 'thursday';
-                          provider.refreshState();
-                          provider.getDayName(day);
+
                           setState(() {
                             _tabController.animateTo(4);
                           });
@@ -147,7 +142,19 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                   itemBuilder: ((context, i) {
                     Day myDays = viewWeekProgram.day![i];
                     return CardWidget(
-                        period: 'Period 1',
+                        period: 'Period ${i + 1}',
+                        subject: myDays.subjectName,
+                        teacher: myDays.teacherName,
+                        time: '9:00 -10:00');
+                    //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
+                  }),
+                ),
+                ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: ((context, i) {
+                    Day myDays = viewWeekProgram.day![i];
+                    return CardWidget(
+                        period: 'Period ${i + 1}',
                         subject: myDays.subjectName,
                         teacher: myDays.teacherName,
                         time: '9:00 -10:00');
@@ -178,103 +185,139 @@ class _WeekProgramForAdminState extends State<WeekProgramForAdmin>
                 //             teacher: 'Abd',
                 //             time: '11:00 - 12:00'),
                 //       ]
+                ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: ((context, i) {
+                    Day myDays = viewWeekProgram.day![i + 6];
+                    return CardWidget(
+                        period: 'Period ${i + 1}',
+                        subject: myDays.subjectName,
+                        teacher: myDays.teacherName,
+                        time: '9:00 -10:00');
+                    //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
+                  }),
+                ),
 
-                ListView(
-                  children: [
-                    CardWidget(
-                        period: 'Peroid 1',
-                        subject: 'Geometry',
-                        teacher: 'Ahmad',
-                        time: '8:00 - 9:00'),
-                    CardWidget(
-                        period: 'Peroid 2',
-                        subject: 'physics',
-                        teacher: 'Basheer',
-                        time: '9:00 - 10:00'),
-                    CardWidget(
-                        period: 'Peroid 3',
-                        subject: 'Math',
-                        teacher: 'Bassam',
-                        time: '10:00 - 11:00'),
-                    CardWidget(
-                        period: 'Peroid 4',
-                        subject: 'Science',
-                        teacher: 'Abd',
-                        time: '11:00 - 12:00'),
-                  ],
+                // ListView(
+                //   children: [
+                //     CardWidget(
+                //         period: 'Peroid 1',
+                //         subject: 'Geometry',
+                //         teacher: 'Ahmad',
+                //         time: '8:00 - 9:00'),
+                //     CardWidget(
+                //         period: 'Peroid 2',
+                //         subject: 'physics',
+                //         teacher: 'Basheer',
+                //         time: '9:00 - 10:00'),
+                //     CardWidget(
+                //         period: 'Peroid 3',
+                //         subject: 'Math',
+                //         teacher: 'Bassam',
+                //         time: '10:00 - 11:00'),
+                //     CardWidget(
+                //         period: 'Peroid 4',
+                //         subject: 'Science',
+                //         teacher: 'Abd',
+                //         time: '11:00 - 12:00'),
+                //   ],
+                // ),
+                // ListView(
+                //   children: [
+                //     CardWidget(
+                //         period: 'Peroid 1',
+                //         subject: 'Geometry',
+                //         teacher: 'Ahmad',
+                //         time: '8:00 - 9:00'),
+                //     CardWidget(
+                //         period: 'Peroid 2',
+                //         subject: 'physics',
+                //         teacher: 'Basheer',
+                //         time: '9:00 - 10:00'),
+                //     CardWidget(
+                //         period: 'Peroid 3',
+                //         subject: 'Math',
+                //         teacher: 'Bassam',
+                //         time: '10:00 - 11:00'),
+                //     CardWidget(
+                //         period: 'Peroid 4',
+                //         subject: 'Science',
+                //         teacher: 'Abd',
+                //         time: '11:00 - 12:00'),
+                //   ],
+                // ),
+                // ListView(
+                //   children: [
+                //     CardWidget(
+                //         period: 'Peroid 1',
+                //         subject: 'Geometry',
+                //         teacher: 'Ahmad',
+                //         time: '8:00 - 9:00'),
+                //     CardWidget(
+                //         period: 'Peroid 2',
+                //         subject: 'physics',
+                //         teacher: 'Basheer',
+                //         time: '9:00 - 10:00'),
+                //     CardWidget(
+                //         period: 'Peroid 3',
+                //         subject: 'Math',
+                //         teacher: 'Bassam',
+                //         time: '10:00 - 11:00'),
+                //     CardWidget(
+                //         period: 'Peroid 4',
+                //         subject: 'Science',
+                //         teacher: 'Abd',
+                //         time: '11:00 - 12:00'),
+                //   ],
+                // ),
+                ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: ((context, i) {
+                    Day myDays = viewWeekProgram.day![i + 6];
+                    return CardWidget(
+                        period: 'Period ${i + 1}',
+                        subject: myDays.subjectName,
+                        teacher: myDays.teacherName,
+                        time: '9:00 -10:00');
+                    //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
+                  }),
                 ),
-                ListView(
-                  children: [
-                    CardWidget(
-                        period: 'Peroid 1',
-                        subject: 'Geometry',
-                        teacher: 'Ahmad',
-                        time: '8:00 - 9:00'),
-                    CardWidget(
-                        period: 'Peroid 2',
-                        subject: 'physics',
-                        teacher: 'Basheer',
-                        time: '9:00 - 10:00'),
-                    CardWidget(
-                        period: 'Peroid 3',
-                        subject: 'Math',
-                        teacher: 'Bassam',
-                        time: '10:00 - 11:00'),
-                    CardWidget(
-                        period: 'Peroid 4',
-                        subject: 'Science',
-                        teacher: 'Abd',
-                        time: '11:00 - 12:00'),
-                  ],
+                ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: ((context, i) {
+                    Day myDays = viewWeekProgram.day![i + 6];
+                    return CardWidget(
+                        period: 'Period ${i + 1}',
+                        subject: myDays.subjectName,
+                        teacher: myDays.teacherName,
+                        time: '9:00 -10:00');
+                    //Subjects mySubject = viewTeachersModel.teachers![i].subjects![0];
+                  }),
                 ),
-                ListView(
-                  children: [
-                    CardWidget(
-                        period: 'Peroid 1',
-                        subject: 'Geometry',
-                        teacher: 'Ahmad',
-                        time: '8:00 - 9:00'),
-                    CardWidget(
-                        period: 'Peroid 2',
-                        subject: 'physics',
-                        teacher: 'Basheer',
-                        time: '9:00 - 10:00'),
-                    CardWidget(
-                        period: 'Peroid 3',
-                        subject: 'Math',
-                        teacher: 'Bassam',
-                        time: '10:00 - 11:00'),
-                    CardWidget(
-                        period: 'Peroid 4',
-                        subject: 'Science',
-                        teacher: 'Abd',
-                        time: '11:00 - 12:00'),
-                  ],
-                ),
-                ListView(
-                  children: [
-                    CardWidget(
-                        period: 'Peroid 1',
-                        subject: 'Geometry',
-                        teacher: 'Ahmad',
-                        time: '8:00 - 9:00'),
-                    CardWidget(
-                        period: 'Peroid 2',
-                        subject: 'physics',
-                        teacher: 'Basheer',
-                        time: '9:00 - 10:00'),
-                    CardWidget(
-                        period: 'Peroid 3',
-                        subject: 'Math',
-                        teacher: 'Bassam',
-                        time: '10:00 - 11:00'),
-                    CardWidget(
-                        period: 'Peroid 4',
-                        subject: 'Science',
-                        teacher: 'Abd',
-                        time: '11:00 - 12:00'),
-                  ],
-                ),
+                // ListView(
+                //   children: [
+                //     CardWidget(
+                //         period: 'Peroid 1',
+                //         subject: 'Geometry',
+                //         teacher: 'Ahmad',
+                //         time: '8:00 - 9:00'),
+                //     CardWidget(
+                //         period: 'Peroid 2',
+                //         subject: 'physics',
+                //         teacher: 'Basheer',
+                //         time: '9:00 - 10:00'),
+                //     CardWidget(
+                //         period: 'Peroid 3',
+                //         subject: 'Math',
+                //         teacher: 'Bassam',
+                //         time: '10:00 - 11:00'),
+                //     CardWidget(
+                //         period: 'Peroid 4',
+                //         subject: 'Science',
+                //         teacher: 'Abd',
+                //         time: '11:00 - 12:00'),
+                //   ],
+                // ),
               ],
             ),
           ),
