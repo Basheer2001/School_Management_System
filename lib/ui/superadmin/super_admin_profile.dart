@@ -1,19 +1,20 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
+import 'package:project_one/api/admin_api.dart';
+import 'package:project_one/models/superadmin/superadmin.dart';
 import 'package:project_one/models/teacher/teacher_model.dart';
-import 'package:project_one/providers/teacher_provider.dart';
+import 'package:project_one/providers/admin_provider.dart';
+
 import 'package:provider/provider.dart';
 
-class TeacherProfileDetails extends StatelessWidget {
-  TeacherProfileDetails({super.key});
-  TeacherModel teacherModel = TeacherModel();
+class SuperAdminsProfile extends StatelessWidget {
+  SuperAdminsProfile({super.key});
+  SuperAdminModel superAdminModel = SuperAdminModel();
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<TeachersProvider>(context);
+    final provider = Provider.of<AdminProivder>(context);
     if (provider.state == ListScreenState.inital) {
       print('if');
-      provider.getTeacherByid();
+      provider.getSuperAdminById();
       return Scaffold(
         body: Center(
           child: CircularProgressIndicator(),
@@ -21,7 +22,7 @@ class TeacherProfileDetails extends StatelessWidget {
       );
     } else {
       print('else');
-      teacherModel = provider.teacherModel;
+      superAdminModel = provider.superAdminModel;
 
       //viewTeachersModel = provider.viewTeachersModel;
       //provider.refreshState();
@@ -52,11 +53,12 @@ class TeacherProfileDetails extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       TextSpan(
-                        text: teacherModel.name,
+                        text: superAdminModel.name,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       TextSpan(
-                        text: ' ${teacherModel.lastName}', //teacherModel.name,
+                        text:
+                            ' ${superAdminModel.lastName}', //teacherModel.name,
                         style: Theme.of(context).textTheme.bodyLarge,
                       )
                     ]),
@@ -76,7 +78,7 @@ class TeacherProfileDetails extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       TextSpan(
-                        text: teacherModel.middleName,
+                        text: superAdminModel.middleName,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ]),
@@ -96,7 +98,7 @@ class TeacherProfileDetails extends StatelessWidget {
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       TextSpan(
-                        text: teacherModel.address,
+                        text: superAdminModel.address,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ]),
@@ -118,7 +120,7 @@ class TeacherProfileDetails extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
                           TextSpan(
-                            text: teacherModel.phoneNumber,
+                            text: superAdminModel.phoneNumber,
                             style: Theme.of(context).textTheme.bodyLarge,
                           ),
                         ]),

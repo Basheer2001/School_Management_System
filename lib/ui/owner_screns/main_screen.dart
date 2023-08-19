@@ -9,6 +9,7 @@ import 'package:project_one/ui/admin_screens/select_year_for_students_administra
 import 'package:project_one/ui/admin_screens/student_admenstration0.dart';
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 import 'package:flutter/services.dart';
+import 'package:project_one/ui/owner_screns/super_admin_management.dart';
 import 'package:project_one/ui/testing_login_page.dart';
 
 class OwnerMainScreen extends StatelessWidget {
@@ -131,45 +132,45 @@ Widget body(BuildContext context) {
       crossAxisSpacing: 20,
       mainAxisSpacing: 24,
       children: [
-        GestureDetector(
-          onTap: () {
-            print('second token: $token');
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => StudentAdminstration0()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/students.jpg',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Students Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                )
-              ],
-            ),
-          ),
-        ),
+        // GestureDetector(
+        //   onTap: () {
+        //     print('second token: $token');
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => StudentAdminstration0()),
+        //     );
+        //   },
+        //   child: Container(
+        //     padding: EdgeInsets.all(10),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(20),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: Colors.black.withOpacity(0.1),
+        //             blurRadius: 4.0,
+        //             spreadRadius: 0.05),
+        //       ],
+        //     ),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Align(
+        //           alignment: Alignment.center,
+        //           child: Image.asset(
+        //             'images/students.jpg',
+        //             height: 120,
+        //             fit: BoxFit.contain,
+        //           ),
+        //         ),
+        //         Text(
+        //           'Students Administration',
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // ),
         GestureDetector(
           onTap: () {
             Navigator.push(
@@ -208,11 +209,120 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
+        // GestureDetector(
+        //   onTap: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => ParentAdminstration()),
+        //     );
+        //   },
+        //   child: Container(
+        //     padding: EdgeInsets.all(10),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(20),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: Colors.black.withOpacity(0.1),
+        //             blurRadius: 4.0,
+        //             spreadRadius: 0.05),
+        //       ],
+        //     ),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Align(
+        //           alignment: Alignment.center,
+        //           child: Image.asset(
+        //             'images/parent.png',
+        //             height: 120,
+        //           ),
+        //         ),
+        //         Text(
+        //           'Parents Administration',
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        // GestureDetector(
+        //   onTap: () {},
+        //   child: Container(
+        //     padding: EdgeInsets.all(10),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(20),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: Colors.black.withOpacity(0.1),
+        //             blurRadius: 4.0,
+        //             spreadRadius: 0.05),
+        //       ],
+        //     ),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Align(
+        //           alignment: Alignment.center,
+        //           child: Image.asset(
+        //             'images/admin.jpg',
+        //             height: 120,
+        //             fit: BoxFit.contain,
+        //           ),
+        //         ),
+        //         Text(
+        //           'Admins Administration',
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        // GestureDetector(
+        //   onTap: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //           builder: (context) => SelectYearForStudentsAdministration()),
+        //     );
+        //   },
+        //   child: Container(
+        //     padding: EdgeInsets.all(10),
+        //     decoration: BoxDecoration(
+        //       color: Colors.white,
+        //       borderRadius: BorderRadius.circular(20),
+        //       boxShadow: [
+        //         BoxShadow(
+        //             color: Colors.black.withOpacity(0.1),
+        //             blurRadius: 4.0,
+        //             spreadRadius: 0.05),
+        //       ],
+        //     ),
+        //     child: Column(
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         Align(
+        //           alignment: Alignment.center,
+        //           child: Image.asset(
+        //             'images/undraw_Building_re_xfcm (2).png',
+        //             height: 120,
+        //             fit: BoxFit.contain,
+        //           ),
+        //         ),
+        //         Text(
+        //           'Classes Administration',
+        //           style: Theme.of(context).textTheme.bodyLarge,
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // ),
         GestureDetector(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ParentAdminstration()),
+              MaterialPageRoute(builder: (context) => SuperAdminManagment()),
             );
           },
           child: Container(
@@ -233,121 +343,12 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/parent.png',
+                    'images/admin.png',
                     height: 120,
                   ),
                 ),
                 Text(
-                  'Parents Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ],
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/admin.jpg',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Admins Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              ],
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SelectYearForStudentsAdministration()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/undraw_Building_re_xfcm (2).png',
-                    height: 120,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Classes Administration',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                )
-              ],
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ParentAdminstration()),
-            );
-          },
-          child: Container(
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 4.0,
-                    spreadRadius: 0.05),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'images/parent.png',
-                    height: 120,
-                  ),
-                ),
-                Text(
-                  'Parents Administration',
+                  'Super Admins Managment',
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ],

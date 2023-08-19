@@ -9,7 +9,7 @@ class SuperAdminApi {
   Future<SuperAdminModel> superAdminRegister(
       SuperAdminModel superAdminModel) async {
     try {
-      var url = Uri.parse('http://192.168.43.47:8000/api/store-teacher');
+      var url = Uri.parse('http://192.168.43.47:8000/api/store-super-admin');
       final response = await http.post(url,
           headers: {
             'Authorization': 'Bearer $token',
@@ -32,7 +32,8 @@ class SuperAdminApi {
     // print(token);
     print('api');
     // انتبه ععلى الروابط
-    var url = Uri.parse('http://192.168.43.47:8000/api/teachers-management');
+    var url =
+        Uri.parse('http://192.168.43.47:8000/api/super-admins-management');
     var response = await http.get(url, headers: {
       'Authorization': 'Bearer $token',
       'Content-Type': 'application/json',
@@ -46,23 +47,32 @@ class SuperAdminApi {
     }
   }
 
-  Future<StudentModel> teacherRegister(StudentModel studentModel) async {
+  Future<SuperAdminModel> viewProfile(int id) async {
     try {
-      var url = Uri.parse('http://192.168.43.47:8000/api/store-teacher');
-      final response = await http.post(url,
-          headers: {
-            'Authorization': 'Bearer $token',
-            'Content-Type': 'application/json',
-          },
-          body: jsonEncode(studentModel.tojson()));
+      // انتبه على الرابط
+      var url = Uri.parse(
+          'http://192.168.43.47:8000/api/get-super-admin-by-id?id=$id');
+
+      var response = await http.get(
+        url,
+        headers: {
+          'Authorization': 'Bearer $token',
+          'Content-Type': 'application/json',
+        },
+      );
       if (response.statusCode == 200) {
-        return StudentModel.fromjsonRegister(jsonDecode(response.body));
+        print('api 200');
+        print(token);
+        final jsonResponse = jsonDecode(response.body);
+        return SuperAdminModel.fromjson(jsonResponse);
       } else {
-        throw 'f';
+        print(response.statusCode);
+        print('api id :$id ');
+        throw Exception(' c');
       }
     } catch (e) {
-      print('error:$e');
-      throw '$e';
+      print(e);
+      throw (e);
     }
   }
 }

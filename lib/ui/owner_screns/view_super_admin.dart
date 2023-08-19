@@ -8,6 +8,7 @@ import 'package:project_one/providers/admin_provider.dart';
 
 import 'package:project_one/ui/admin+owner_screens/teacher_profile_details.dart';
 import 'package:project_one/ui/admin_screens/teachers_list.dart';
+import 'package:project_one/ui/superadmin/super_admin_profile.dart';
 import 'package:project_one/ui/teachers/test_profile.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,7 @@ class ViewSuperAdmins extends StatelessWidget {
     }
     return Scaffold(
         appBar: AppBar(
-          title: Text('View Teachers'),
+          title: Text('View SuperAdmins'),
           actions: [],
         ),
         body: Container(
@@ -52,11 +53,11 @@ class ViewSuperAdmins extends StatelessWidget {
                     int id = mySuperAdmin.id;
                     print(id);
                     provider.getid(id);
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //       builder: (context) => TeacherProfileDetails()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SuperAdminsProfile()),
+                    );
                   },
                   title: RichText(
                     text: TextSpan(children: [

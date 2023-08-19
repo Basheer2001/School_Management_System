@@ -8,8 +8,8 @@ import 'package:project_one/ui/admin_screens/view_sections.dart';
 import 'package:project_one/ui/admin_screens/view_sections_abd.dart';
 import 'package:project_one/ui/owner_screns/view_super_admin.dart';
 
-class SelectYearForClassAdministration extends StatelessWidget {
-  const SelectYearForClassAdministration({super.key});
+class SuperAdminManagment extends StatelessWidget {
+  SuperAdminManagment({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -471,7 +471,7 @@ class _SuperAdminRegisterState extends State<SuperAdminRegister> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Teacher Register',
+          'SuperAdmin Register',
           style: TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),

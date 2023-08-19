@@ -55,7 +55,7 @@ class SuperAdminModel {
   }
   factory SuperAdminModel.fromjsonRegister(Map<String, dynamic> json) {
     return SuperAdminModel(
-      keyyy: json['message'],
+      keyyy: json['keyyy'],
     );
   }
   Map<String, dynamic> tojson() {

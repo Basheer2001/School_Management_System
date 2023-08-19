@@ -41,7 +41,9 @@ class StudentAdminstration0 extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SelectYearForStudentsAdministration()),
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              SelectYearForStudentsAdministration()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
@@ -64,10 +66,10 @@ class StudentAdminstration0 extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 30),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => StudentRegister()),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => StudentRegister()),
+                    // );
                   },
                   style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.all(15),

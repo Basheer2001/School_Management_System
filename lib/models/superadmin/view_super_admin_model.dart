@@ -3,7 +3,7 @@ class ViewSuperAdminModel {
   ViewSuperAdminModel({this.superAdmins});
   factory ViewSuperAdminModel.fromjson(Map<String, dynamic> json) {
     List<SuperAdmins> data = [];
-    data = json['super_admin']
+    data = json['super_admins']
         .map<SuperAdmins>((json) => SuperAdmins.fromjson(json))
         .toList();
     return ViewSuperAdminModel(superAdmins: data);
