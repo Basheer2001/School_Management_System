@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 
 
 
+<<<<<<< HEAD
+class GradesPage extends StatefulWidget {
+  const GradesPage({super.key});
+
+  @override
+  _GradesPageState createState() => _GradesPageState();
+}
+
+class _GradesPageState extends State<GradesPage> {
+  List<String> subjects = ['رياضيات', 'فيزياء', 'كيمياء', 'علوم','عربي','انكليزي','فرنسي','تربية وطنية'];
+=======
 class AddGrades extends StatefulWidget {
   const AddGrades({super.key});
 
@@ -11,6 +22,7 @@ class AddGrades extends StatefulWidget {
 
 class _AddGradesState extends State<AddGrades> {
   List<String> subjects = ['رياضيات', 'فيزياء', 'كيمياء', 'علوم','عربي','انكليزي','فرنسي'];
+>>>>>>> origin/master
   Map<String, double> grades = {};
   Map<String, double> eval = {};
 
@@ -18,6 +30,10 @@ class _AddGradesState extends State<AddGrades> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
+        backgroundColor:  Color(0xff886ff2),
+=======
+>>>>>>> origin/master
         title: const Text('Student Grades Input'),
       ),
       body: ListView(
@@ -60,7 +76,11 @@ class _AddGradesState extends State<AddGrades> {
                               });
                             },
                             decoration: const InputDecoration(
+<<<<<<< HEAD
+                              hintText: 'Enter evaluation',
+=======
                               hintText: 'Enter eval',
+>>>>>>> origin/master
                             ),
                           ),
                         ),
@@ -72,7 +92,11 @@ class _AddGradesState extends State<AddGrades> {
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
+<<<<<<< HEAD
+                    print(grades);
+=======
                     print(grades); // Replace with your desired action
+>>>>>>> origin/master
                   },
                   child: const Text('Save '),
                 ),

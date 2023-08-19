@@ -1,60 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:project_one/constants/color.dart';
-import 'package:project_one/services/shared_prefernces.dart';
 import 'package:project_one/ui/admin_screens/parent%20_adminstration.dart';
 import 'package:project_one/ui/admin_screens/select_year_for_students_administration.dart';
 import 'package:project_one/ui/admin_screens/student_admenstration0.dart';
 import 'package:project_one/ui/admin_screens/teachers_adminstration.dart';
 import 'package:flutter/services.dart';
-import 'package:project_one/ui/testing_login_page.dart';
 
 class SuperAdminMainScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  SuperAdminMainScreen({super.key});
+  const SuperAdminMainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-        key: scaffoldKey,
-        drawer: Drawer(
-          child: Column(
-            children: [
-              UserAccountsDrawerHeader(
-                accountName: Text(
-                  'abd',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                ),
-                accountEmail: Text(
-                  '',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-                ),
-              ),
-              ListTile(
-                title: Text(
-                  'Log Out',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-                leading: Icon(
-                  Icons.exit_to_app_outlined,
-                ),
-                onTap: () {
-                  SharedService.logout();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
         body: Column(
           children: [
-            appBar(context, scaffoldKey),
+            appBar(context),
             body(context),
           ],
         ),
@@ -64,7 +27,7 @@ class SuperAdminMainScreen extends StatelessWidget {
 }
 
 @override
-Widget appBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
+Widget appBar(BuildContext context) {
   return Container(
     padding: EdgeInsets.only(top: 50, left: 20, right: 20),
     height: 150,
@@ -92,22 +55,6 @@ Widget appBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
             Text(
               'Super Admin Mode',
               style: Theme.of(context).textTheme.titleLarge,
-            ),
-            Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: kPrimaryLight,
-              ),
-              child: IconButton(
-                  onPressed: () {
-                    scaffoldKey.currentState?.openDrawer();
-                  },
-                  icon: Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  )),
             ),
           ],
         )
@@ -193,7 +140,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/teachr.png',
+                    'images/teacher2.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -263,7 +210,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/admin.png',
+                    'images/admin2.jpg',
                     height: 120,
                     fit: BoxFit.contain,
                   ),

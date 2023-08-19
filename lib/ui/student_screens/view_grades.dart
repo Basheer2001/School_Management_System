@@ -9,7 +9,7 @@ class Result extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Marks'),
-        backgroundColor: Colors.blue,
+        backgroundColor:  Color(0xff886ff2),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
