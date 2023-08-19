@@ -296,7 +296,129 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ViewEvents()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/events.png',
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Text(
+                  'Events',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
+
       ],
     ),
   );
 }
+
+
+class ViewEvents extends StatelessWidget {
+  ViewEvents({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('View Events'),
+          actions: [],
+        ),
+        body: Container(
+          color: Colors.grey[200],
+          padding: EdgeInsets.all(10),
+          child: ListView(
+              children: [
+
+                Card(
+                  child: ListTile(
+                    onTap: () {
+
+                    },
+                    title: Text(
+                        'ghjk'
+                    ),
+
+                    //subtitle: Text(myteacher.lastName),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    onTap: () {
+
+                    },
+                    title: Text(
+                        'ghjk'
+                    ),
+
+                    //subtitle: Text(myteacher.lastName),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    onTap: () {
+
+                    },
+                    title: Text(
+                        'ghjk'
+                    ),
+
+                    //subtitle: Text(myteacher.lastName),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ListTile(
+                    onTap: () {
+
+                    },
+                    title: Text(
+                        'ghjk'
+                    ),
+
+                    //subtitle: Text(myteacher.lastName),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ]
+          ),
+        ));
+  }
+}
+

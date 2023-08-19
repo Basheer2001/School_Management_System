@@ -114,7 +114,7 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       home:
-          LoginPage(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
+         Move(),// LoginPage(), //StudentRegister(),////ParentScreen(),//StudentScreen(),//AdminMainScreen(), //StudentRegister(),//LoginPage(),
 
       routes: <String, WidgetBuilder>{
         '/home': (context) => HomePage(),

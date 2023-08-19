@@ -16,6 +16,7 @@ import 'package:project_one/ui/admin_screens/view_sections_for_students.dart';
 import 'package:project_one/ui/testing_login_page.dart';
 
 import 'admin_screens/class_adminstration.dart';
+import 'admin_screens/events_management.dart';
 import 'admin_screens/student_admenstration0.dart';
 
 class FeaturedScreen extends StatelessWidget {
@@ -203,7 +204,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/teachers.png',
+                    'images/teachr.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -273,7 +274,7 @@ Widget body(BuildContext context) {
                 Align(
                   alignment: Alignment.center,
                   child: Image.asset(
-                    'images/admin.jpg',
+                    'images/admin.png',
                     height: 120,
                     fit: BoxFit.contain,
                   ),
@@ -324,7 +325,47 @@ Widget body(BuildContext context) {
             ),
           ),
         ),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EventsManagement()),
+            );
+          },
+          child: Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 4.0,
+                    spreadRadius: 0.05),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    'images/events.png',
+                    height: 120,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Text(
+                  'Events Management',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                )
+              ],
+            ),
+          ),
+        ),
       ],
     ),
   );
 }
+// ignore_for_file: prefer_const_constructors
+
